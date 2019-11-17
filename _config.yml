@@ -297,7 +297,7 @@ defaults:
   - scope:
       path: ""
       type: pages
-    valeus:
+    values:
       layout: single
       author_profile: true
       read_time: false
