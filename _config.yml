@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "저녁밥 블로그/Dinn's Blog"
+title                    : "저녁밥 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "저녁밥/Dinn"
+name                     : "저녁밥"
 description              : "비전공자 출신의 개발자 도전 블로그"
 url                      : "https://dinn.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -107,7 +107,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "저녁밥/Dinn"
+  name             : "저녁밥"
   avatar           : "/assets/images/bio-photo-seogaandcook.jpg"
   bio              : "비전공자 출신의 개발자 도전 블로그"
   location         : "Suwon, Republic of Korea"
@@ -289,7 +289,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
 
