@@ -10,18 +10,9 @@ tags:
   - cheatsheet
   - 마크다운
 ---
-<style>
-pre {
-    background-color: whitesmoke
-}
-
-pre.highlight {
-    background-color: #263238: 
-}
-</style>
 
 ## Headers
-<pre>
+```
 # H1
 ## H2
 ### H3
@@ -34,7 +25,7 @@ Alt-H1
 
 Alt-H2
 ------
-</pre>
+```
 
 # H1
 ## H2
@@ -51,37 +42,58 @@ Alt-H2
 
 
 ## Emphasis
-<pre>
-italic: 
+```
+Italic: 
 *asterisks* or _underscores_
 
-bold: 
+Bold: 
 **asterisks** or __underscores__
 
-scratch: 
+Strikethrough: 
 ~~tildes~~
-</pre>
 
-italic: 
+Bold and Italic: 
+
+***asterisks or underscores***
+
+**_asterisks or underscores_**
+
+__*asterisks or underscores*__
+
+___asterisks or underscores___
+```
+
+Italic: 
 *asterisks* or _underscores_
 
-bold: 
+Bold: 
 **asterisks** or __underscores__
 
-scratch: 
+Strikethrough: 
 ~~tildes~~
+
+Bold and Italic: 
+
+***asterisks or underscores***
+
+**_asterisks or underscores_**
+
+__*asterisks or underscores*__
+
+___asterisks or underscores___
+
 
 
 ## Lists
 ### Unordered list
-<pre>
+```
 * asterisk
 + plus
 - minus
   * unordered sub-list
     + unordered sub-sub-list
     - unordered sub-sub-list
-</pre>
+```
 * asterisks
 + plus
 - minus
@@ -90,7 +102,7 @@ scratch:
     - unordered sub-sub-list
     
 ### ordered list
-<pre>
+```
 1. A
 1. B
     * mixed list1
@@ -98,7 +110,7 @@ scratch:
 1. C
     1. C1
     1. C2
-</pre>
+```
 1. A
 1. B
     * mixed list1
@@ -109,7 +121,7 @@ scratch:
 
 
 ## Links
-<pre>
+```
 [inline link](https://dinn.github.io)
 
 [inline link with title](https://dinn.github.com "저녁밥 블로그")
@@ -125,7 +137,7 @@ scratch:
 [reference text]: https://google.com "Google"
 [1]: https://developer.mozilla.org
 [text itself]: https://github.com
-</pre>
+```
 [inline link](https://dinn.github.io)
 
 [inline link with title](https://dinn.github.com "저녁밥 블로그")
@@ -144,7 +156,7 @@ scratch:
 
 
 ## Images
-<pre>
+```
 Inline-style: 
 ![alt text](https://www.w3schools.com/w3css/img_lights.jpg "aurora")
 
@@ -153,9 +165,9 @@ Reference-style:
 
 [img]: https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg "butterfly"
 
-Image link: 
+Linking image: 
 [![google](https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-c-k-c0xffffffff-no-rj-mo)](https://google.com "google")
-</pre>
+```
 Inline-style: 
 ![alt text](https://www.w3schools.com/w3css/img_lights.jpg "aurora")
 
@@ -164,39 +176,210 @@ Reference-style:
 
 [img]: https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg "butterfly"
 
-Image link: 
+Linking image: 
 [![google](https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-c-k-c0xffffffff-no-rj-mo)](https://google.com "google")
 
 
 ## Blockquotes
-<pre>
+```
 > blockquotes
 >> nested blockquotes
-</pre>
+```
 > blockquotes
 >> nested blockquotes
 
 
 ## Code
-<pre>
+<pre style= "
+  font-size: 0.8em;
+  background-color: #263238;
+  color: #fff;
+  padding: 16.5px;
+  border-radius: 4px;
+  ">
 Inline code:
-`backticks`
+`backquote`
 
-code block:
+Fenced code block:
 ```javascript
 console.log("Hello, world!")
 ```
 </pre>
-Inline code:
-`backticks`
 
-code block:
+Inline code:
+`backquote`
+
+Fenced code block:
 ```javascript
 console.log("Hello, world!")
 ```
 
 ## Table
-id | attr1 | attr2
-----|-------|------
-00 | val01 | val02
-01 | val11 | val12
+```
+attr1 | attr2 | attr3
+------ | ------ | ------
+001 | face | article
+002 | coffee | delicate
+
+There must be three hyphens(-) seperating each header cell.
+
+| header1 | header2 | header3 |
+| :------ | :-----: | ------: |
+| left-aligned | center-aligned | right-aligned |
+|*inline markdown* | __is still__ | `available` |
+```
+
+attr1 | attr2 | attr3
+------ | ------ | ------
+001 | face | article
+002 | coffee | delicate
+
+There must be at least three hyphens(-) seperating each header cell.
+
+| header1 | header2 | header3 |
+| :------ | :-----: | ------: |
+| left-aligned | center-aligned | right-aligned |
+|*inline markdown* | __is still__ | `available` |
+
+
+## Horizontal Rules
+```
+Three or more ...
+
+* * *
+***
+asterisks
+
+- - -
+---
+hypens
+
+_ _ _
+___
+undersoces
+```
+Three or more ...
+
+* * *
+***
+asterisks
+
+- - -
+---
+hypens
+
+_ _ _
+___
+undersoces
+
+
+## Task Lists
+```
+- [x] The Godfather
+- [x] Inception
+- [ ] The Shawshank Redemption
+- [ ] The Silence of the Lambs
+- [x] Joker
+- [ ] Forrest Gump
+```
+- [x] The Godfather
+- [x] Inception
+- [ ] The Shawshank Redemption
+- [ ] The Silence of the Lambs
+- [x] Joker
+- [ ] Forrest Gump
+
+
+## Footnotes
+```
+How to make footnote[^1]
+
+Rules for identifier[^rule]
+
+Other tips[^2]
+
+[^1]: Add carat and identifier inside brackets.
+[^rule]: Only contains alphanumeric characters(a-z, A-Z, 0-9) without spaces or tabs.
+[^2]: Order of footnote doesn't follow numbers in bracket.
+    
+    Indent helps footnote to have multiple lines.
+```
+How to make footnote[^1]
+
+Rules for identifier[^rule]
+
+Other tips[^2]
+
+[^1]: Add carat and identifier inside brackets.
+[^rule]: Only contains alphanumeric characters(a-z, A-Z, 0-9) without spaces or tabs.
+[^2]: Order of footnote doesn't follow numbers in bracket.
+    
+    Indent helps footnote to have multiple lines.
+
+
+## Definition Lists
+```
+term1
+ : term1 definition
+
+term2
+ : term2 definition
+ : another definition
+```
+term1
+ : term1 definition
+
+term2
+ : term2 definition
+ : another definition
+
+
+## Backslash Escapes
+```
+\\ backslash
+
+\` backtick
+
+\* asterisk
+
+\_ underscore
+
+\{\} curly braces
+
+\[\] square brackets
+
+\(\) paretheses
+
+\# hash mark
+
+\+ plus sign
+
+\- minus sign(hyphen)
+
+\. dot
+
+\! exclamtion mark
+```
+\\ backslash
+
+\` backtick
+
+\* asterisk
+
+\_ underscore
+
+\{\} curly braces
+
+\[\] square brackets
+
+\(\) paretheses
+
+\# hash mark
+
+\+ plus sign
+
+\- minus sign(hyphen)
+
+\. dot
+
+\! exclamtion mark
