@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "저녁밥 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "저녁밥 블로그"
+name                     : "저녁밥"
 description              : "비전공자 출신의 개발자 도전 블로그"
 url                      : "https://dinn.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -232,7 +232,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-last-modified-at
 
 # mimic GitHub Pages with --safe
 whitelist:
