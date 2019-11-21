@@ -1,8 +1,8 @@
 ---
 title: "마크다운 사용법 / Markdown Tutorial"
-excerpt: "마크다운 기본 사용법"
+excerpt: "Headers, Emphasis, Lists, Links, Images, Blockquotes, Code, Table, Horizontal Rules, Task Lists, Footnotes,            Definition Lists, Backslash Escapes"
 date: 2019-11-18
-last_modified_at: 2019-11-21T16:52:43
+last_modified_at: 2019-11-21T22:32:39
 toc: false
 
 categories:
