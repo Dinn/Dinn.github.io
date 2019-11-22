@@ -1,7 +1,7 @@
 ---
 title: "정보처리기사 실기 데이터베이스 요약"
 date: 2019-11-21
-last-modified-at: 2019-11-22T16:34:09
+last_modified_at: 2019-11-22T16:34:09
 
 toc_sticky: false
 
