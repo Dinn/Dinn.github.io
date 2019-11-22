@@ -1,7 +1,8 @@
 ---
 title: "정보처리기사 실기 데이터베이스 요약"
 date: 2019-11-21
-last-modified-at: 2019-11-21T15:42:10
+last-modified-at: 2019-11-22T16:34:09
+
 toc_sticky: false
 
 categories:
@@ -23,8 +24,10 @@ tags:
 >
 
 
-##  [1] 데이터베이스(DB)의 개념
-### 1. 정의: 특정 조직의 업무를 수행하는데 필요한 상호 관련된 데이터들의 모임
+## 1. 데이터베이스(DB)의 개념
+### 1.1. 정의
+특정 조직의 업무를 수행하는데 필요한 상호 관련된 데이터들의 모임
+
 1. 통합 데이터(Integrated Data)
 : 검색 효율성을 위해 중복을 최소화한 데이터 eg) 클라우드
 
@@ -37,7 +40,7 @@ tags:
 4. 공유 데이터(Shared Data)
 : 여러 응용프로그램이 공동을 사용하는 데이터
 
-### 2. 특징
+### 1.2. 특징
 1. 실시간 접근성(Real Time Accessiblity)
 : 사용자 질의에 즉시 처리하여 응답
 
@@ -53,7 +56,7 @@ tags:
 5. 데이터 논리적/물리적 독립성(Independence)
 : 
 
-### 3. 데이터 언어: DBMS와의 통신수단
+### 1.3. 데이터 언어: DBMS와의 통신수단
 1. DDL(Data Definition Language, 데이터 정의어)
 : DB를 구축하거나 변경할 목적으로 사용하는 언어
 
@@ -63,7 +66,7 @@ tags:
 3. DCL(Data Control Language, 데이터 제어어)
 : 보안/권한제어, 무결성, 회복, 병행제어를 위한 언어
 
-### 4. 데이터베이스 사용자
+### 1.4. 데이터베이스 사용자
 1. DBA(Database Administrator)
 : DDL과 DCL을 통해 DB를 정의하고 제어하는 사람/그룹
 
@@ -82,12 +85,12 @@ tags:
 DA(Data Administrator, Architect)가 data 자체를 관리하고 설계하는 설계자, 관리자라면 DBA는 DA가 설계한 구조를 바탕으로 DB를 구축하는 기술자이다.
 
 
-## [2] 데이터베이스 관리 시스템(DBMS; Database Management System)
-### 1. 개념
+## 2. 데이터베이스 관리 시스템(DBMS; Database Management System)
+### 2.1. 개념
 사용자와 데이터베이스 사이에서 사용자의 요구에 따라 정보를 생성해 주고 데이터베이스를 관리해주는 소프트웨어
 eg) MySQL, ORACLE, ...
 
-###	2. 특징
+###	2.2. 특징
 1. 중복의 최소화
 : 
 
@@ -103,7 +106,7 @@ eg) MySQL, ORACLE, ...
 5. 데이터 보안 유지
 : 
 
-###	3. 장단점
+###	2.3. 장단점
 1. 장점
 : 논리적/물리적 독립성 보장, 공동 이용, 표준화, 무결성 유지, 실시간 처리, 중복 방지, 통합관리, 일관성 유지, 보안 유지, 
 최신 유지
@@ -115,11 +118,11 @@ DSMS(Data Stream Management System)
 : 통신 상 데이터 스트리밍을 통해 데이터를 처리하고 관리하는 시스템으로 동적인 데이터를 처리하는 관리 시스템
 
 
-## [3] 스키마(Schema)
-### 1. 정의
+## 3. 스키마(Schema)
+### 3.1. 정의
 데이터베이스의 구조와 계약조건에 관한 전반적인 명세
 
-###	2. 스키마 3계층
+###	3.2. 스키마 3계층
 1. 외부 스키마(External Schema)
 : 사용자나 응용프로그래머가 각 개인 입장에서 필요로 하는 DB의 논리적 구조를 정의한다.
 : 사용자 입장에서 보여지는 구조
@@ -133,16 +136,16 @@ DSMS(Data Stream Management System)
 : 물리적으로 저장돼 있는 데이터의 유형이나 크기와 관련된 구조
 
 
-## [4] 데이터베이스 설계
-###	1. 정의
+## 4. 데이터베이스 설계
+###	4.1. 정의
 DB Schema를 개발하는 과정이며 데이터 모델링이라고도 한다.
 
 현실 세계의 정보들을 컴퓨터에 체계적으로 표현하기 위해서 단순화, 추상화 형태로 나타낸 개념적 모형
 
-###	2. 구성 요소
+###	4.2. 구성 요소
 구조(Structure) / 연산(Operation) / 제약조건(Constraint)	
 
-###	3. 개념적 데이터 모델
+###	4.3. 개념적 데이터 모델
 1. 요구조건 분석
 : 요구조건 명세서 작성
 
@@ -160,41 +163,41 @@ DB Schema를 개발하는 과정이며 데이터 모델링이라고도 한다.
 : DDL로 데이터베이스 생성, 트랜잭션 생성
 
 
----
----
----
+<br>
+<br>
+
 # 개념적 데이터베이스 모델링
-## [5] ER모델
+## 5. ER모델
 대표적인 개념적 데이터 모델(Peter Chen, 1976)
 
-###	1. 개체(Entity)
+###	5.1. 개체(Entity)
 DB화 하려는 대상
 
 Entity Type - Entity Instance
 
-###	2. 속성(Attribute)
+###	5.2. 속성(Attribute)
 1. 단순 속성 vs 복합 속성
-    1. 단순 속성 (simple attribute)
+    - 단순 속성 (simple attribute)
     : 더 이상 분해할 수 없는 속성 eg) 이름
 
-    2. 복합 속성 (composit attribute)
+    - 복합 속성 (composit attribute)
     : 단순 속성으로 분해할 수 있는 속성 eg) 주소
 
 2. 단일값 속성 vs 다중값 속성
-    1. 단일값 속성(single value attribute)
+    - 단일값 속성(single value attribute)
     : 하나의 값을 갖는 속성
 
-    2. 다중값 속성(multiple value attribute)
+    - 다중값 속성(multiple value attribute)
     : 여러 값을 갖는 속성 -> 정규화를 통해 가급적이면 분해해야 한다.
 
 3. 저장속성 vs 유도 속성
-    1. 저장 속성(Stored Attribute)
+    - 저장 속성(Stored Attribute)
     : 유도 속성 계산을 위해 사용된 속성 eg) 강사 입문 년도
 
-    2. 유도 속성(Derived Attribute)
+    - 유도 속성(Derived Attribute)
     : 다른 속성 값으로 부터 유도되어 결정되는 속성 eg) 강사 경력
 	
-###	3. 관계 타입(Relationship Type) / 관계의 카디널리티(Relationship Cardinality)
+###	5.3. 관계 타입(Relationship Type) / 관계의 카디널리티(Relationship Cardinality)
 1. 1:1관계
 : 관계에 참여하고 있는 두 개체 타입이 모두 하나씩의 개체 occurence를 갖는 관계
 
@@ -204,34 +207,34 @@ Entity Type - Entity Instance
 3. N:M관계
 : 관계에 참여하고 있는 두 개체 타입 모두 여러가지의 개체 occurence를 갖는 관계
 
-###	4. 필수/선택 참여 관계
+###	5.4. 필수/선택 참여 관계
 필수참여 관계(Mandatory Membership)
 : 반드시 대응되는 개체가 있어야 한다.	\|
 
 선택참여 관계(Optional Membership)
 : 반드시 대응되는 개체가 없어도 된다. 	O
 
-###	5. 종속 관계(Independant Relationship)
+###	5.5. 종속 관계(Independant Relationship)
 식별관계 
 : 외래 식별자가 주 식별자로 존재하는 관계(B는 A에 의존적)... _실선_
 
 비식별관계
 : 외래 식별자가 일반속성으로 존재하는 관계(A와 B는 독립적)... _점선_
 
-###	6. 존재 종속 관계(Existance Dependance)
+###	5.6. 존재 종속 관계(Existance Dependance)
 주 개체(dominant entity, strong entity)
 : B개체의 존재를 결정하는 A개체
 
 종속 개체(subdominate entity, weak entity
 : A개체에 의해 존재가 결정되는 B개체
 
-###	7. ISA관계: 상속관계
+###	5.7. ISA관계: 상속관계
 
 
-## [6] 관계형데이터 모델
+## 6. 관계형데이터 모델
 테이블 또는 Relation(데이터를 원자 값으로 갖는 이차원의 테이블)의 구조로 표현하는 논리적 데이터 모델
 
-###	1. 릴레이션의 구조
+###	6.1. 릴레이션의 구조
 1. 행(Row)
 : 
 
@@ -260,7 +263,7 @@ Entity Type - Entity Instance
 9. Domain
 : 속성이 취할 수 있는 같은 타입의 원자값들의 집합. 정의된 속성은 반드시 해당 도메인 내의 값을 취한다. eg)학년의 도메인: 1~6
 		
-###	2. 릴레이션의 특성
+###	6.2. 릴레이션의 특성
 1. 한 릴레이션에 포함된 튜플들은 모두 상이하다.(중복 금지)
 
 2. 한 릴레이션에 포함된 튜플 사이에는 순서가 없다.
@@ -272,7 +275,7 @@ Entity Type - Entity Instance
 5. 모든 속성값은 논리적으로 더 이상 분해할 수 없는 값인 원자값이어야 한다.
 
 
-###	3. ER스키마의 관계 스키마 사상(Mapping Rule)
+###	6.3. ER스키마의 관계 스키마 사상(Mapping Rule)
 ER model(개념적 모델) -> Relation Schema(논리적 모델)
 
 1. 1:1관계
@@ -285,29 +288,27 @@ ER model(개념적 모델) -> Relation Schema(논리적 모델)
 : Relation A, B 기본키를 포함한 별도 릴레이션 C를 표현하며 이 때 C는 교차 엔티티(교차 릴레이션) 이다.
 
 
-###	4. 교차 관계(Intersection Relationship)
+###	6.4. 교차 관계(Intersection Relationship)
 관계를 테이블로 표현하여 다대다 관계를 보여주는 테이블
 
----
----
----
+<br><br>
 # 논리적 데이터베이스 모델링
-## [7] 키(key)
-### 1. 정의
+## 7. 키(key)
+### 7.1. 정의
 주어진 릴레이션에서 모든 인스턴스 가운데 유일함(Uniqueness)을 보장해주는 하나 이상의 애트리뷰트의 집합이다.
 
 튜플을 유일하게 식별할 수 있는 속성의 집합
 
 튜플을 검색하거나 정렬할 때 튜플을 서로 구분할 수 있는 기준이 되는 속성
 
-### 2. 특성
+### 7.2. 특성
 1. 유일성(Uniqueness)
 : 
 
 2. 최소성(minimality)
 : 최소한의 속성으로 원하는 튜플을 찾아야 한다.
 
-### 3. 키의 종류
+### 7.3. 키의 종류
 1. 슈퍼키(Super Key)
 : 튜플을 유일하게 구분하기 위해 한 개 이상의 속성들로 이루어진 키. 유일성을 만족하지만 최소성을 만족하지 못함
 
@@ -327,14 +328,14 @@ ER model(개념적 모델) -> Relation Schema(논리적 모델)
 : 2개 이상의 속성을 조합하여 만든 키
 
 
-## [8]무결성 제약(Integrity Constraint)
-### 1. 무결성
+## 8.무결성 제약(Integrity Constraint)
+### 8.1. 무결성
 DB에 저장된 값과 그것이 표현하는 현실세계 실제 값이 일치하는 정확성. 데이터의 정확성/정합성
 
-### 2. 제약조건(Constraint)
+### 8.2. 제약조건(Constraint)
 DB의 정확성을 보장하기 위해 정확하지 않은 데이터가 저장되는 것을 방지하기 위한 제약조건
 
-### 3. 종류
+### 8.3. 종류
 1. 개체 무결성 제약
 : 한 릴레이션의 기본키를 구성하는 어떠한 속성값도 NULL이나 중복값을 가질 수 없다.
 
@@ -346,7 +347,7 @@ DB의 정확성을 보장하기 위해 정확하지 않은 데이터가 저장�
 : (도메인 - 속성값이 가질 수 잇는 범위, 원자값들의 집합)
 
 
-### 4. 무결성 제약을 위한 DBMS의 옵션
+### 8.4. 무결성 제약을 위한 DBMS의 옵션
 1. restrict - no action
 
 2. cascade - 연쇄 삭제 연쇄 수정
@@ -356,13 +357,13 @@ DB의 정확성을 보장하기 위해 정확하지 않은 데이터가 저장�
 4. set default - 기본값으로 수정
 
 
-## [9] 이상(Anomaly)
-### 1. 개념
+## 9. 이상(Anomaly)
+### 9.1. 개념
 데이터 중복으로 인해 릴레이션 조작 시 예상하지 못한 곤란한 현상이 발상
 
 이상은 속성들 간에 존재하는 여러 종류의 종속 관계를 하나의 릴레이션에 표현할 때 발생
 
-### 2. 종류
+### 9.2. 종류
 1. 삽입 이상(Insertion Anomaly)
 : 데이터 삽입 시 의도하지 않는 값들로 인해 삽입이 불가능한 현상
 
@@ -374,13 +375,13 @@ DB의 정확성을 보장하기 위해 정확하지 않은 데이터가 저장�
 
 
 
-## [10] 함수적 종속성(Functional Dependency)
-### 1. 정의
+## 10. 함수적 종속성(Functional Dependency)
+### 10.1. 정의
 X -> Y 'X이면 Y이다'
 
 X는 결정자(Determinant) / Y는 종속자(Dependent)
 
-### 2. 정규형
+### 10.2. 정규형
 
 함수적 종속 | 정규형
 :-------------:|:--------:
@@ -390,7 +391,7 @@ X는 결정자(Determinant) / Y는 종속자(Dependent)
 다치 종속 | 4NF
 조인 종속 | 5NF
 
-### 3. 완전함수적종속 / 부분함수적종속
+### 10.3. 완전함수적종속 / 부분함수적종속
 복합키로 기본키가 구성되어 있을 때,
 
 키를 구성하는 모든 속성을 참조해서 특정 속성을 조회할 수 있다면 완전함수적종속이고 일부 속성만을 참조해서 특정 속성을 조회할 수 있다면 부분함수적종속이다.
@@ -401,92 +402,90 @@ X는 결정자(Determinant) / Y는 종속자(Dependent)
 
 부분함수적종속을 제거하고 완전함수적종속으로 바꾼다.
 
-### 4. 이행함수적종속
+### 10.4. 이행함수적종속
 A->B->C
 
 학번 -> 주민번호 -> 성명
 
 학번 -> 주민번호 / 주민번호 -> 성명
 
-### 5. 다치종속(MVD, Multi Value Dependent)
+### 10.5. 다치종속(MVD, Multi Value Dependent)
 A ->> B
 
 과목 ->> 교제\|교수
 
 과목 -> 교제 / 과목 -> 교수
 
-### 6. 조인 종속
+### 10.6. 조인 종속
 위조튜플
 
 
-## [11] 정규화(normalization)
+## 11. 정규화(normalization)
 비정규 릴레이션(개념스키마) -> 정규화된 릴레이션
 
 테이블을 무손실분해하여 이상 현상 발생 가능성을 줄이는 것
-### 1. 무손실 분해(Lossless Decomposition)
+### 11.1. 무손실 분해(Lossless Decomposition)
 분해된 두 릴레이션을 조인하면 원래의 릴레이션에 들어 있는 정보를 완전하게 얻을 수 있다.
 
 여기서 손실이란 정보의 손실을 뜻한다.
 
 정보의 손실은 원래의 릴레이션을 분해한 후에 생성된 릴레이션들을 조인한 결과에 들어 있는 정보가 원래의 릴레이션에 들어 있는 정보보다 적거나 많은 것을 모두 포함한다.	
 
-### 2. 제1정규형(1NF)
+### 11.2. 제1정규형(1NF)
 릴레이션에 속한 모든 도메인이 원자값(Atomic Value)
 
 모든 열과 행의 중복지점에는 한 개의 값(single value)를 가진다.
 
-### 3. 제2정규형(2NF) 
+### 11.3. 제2정규형(2NF) 
 키가 아닌 모든 속성들이 기본키에 완전 함수 종속
 
-### 4. 제3정규형(3NF) 
+### 11.4. 제3정규형(3NF) 
 키가 아닌 모든 속성들이 기본키에 이행적으로 함소종속 되지 않는 릴레이션
 
-### 5. BCNF(Boyce-Codd NF) 
+### 11.5. BCNF(Boyce-Codd NF) 
 릴레이션의 모든 결정자가 후보키인 릴레이션 강한 제3정규형(3.5NF)리아고도 함
 
-### 6. 제4정규형(4NF) 
+### 11.6. 제4정규형(4NF) 
 릴레이션 R에서 다치종속 A ->-> B 가 성립하는 경우 다치종속(MVD)의 제거
 
-### 7. 제5정규형(5NF) 
+### 11.7. 제5정규형(5NF) 
 조인종속성 이용
 
 
 
----
----
----
+<br><br>
 # 물리적 데이터베이스 모델링
-## [12] 물리적 데이터베이스 모델링
-### 1. 정의
+## 12. 물리적 데이터베이스 모델링
+### 12.1. 정의
 저장구조와 접근경로의 설계
 
 데이터베이스의 쿼리와 트랜잭션들을 분석
 
 역정규화
 
-### 2. 물리적 DB 설계 시 고려사항
+### 12.2. 물리적 DB 설계 시 고려사항
 응답 시간의 최소화
 
 저장 공간의 효율화
 
 트랜잭션 처리도
 
-### 3. 물리적 DB 설계의 기능
+### 12.3. 물리적 DB 설계의 기능
 저장 레코드 양식 설계 -> type과 data size를 정한다.
 
 레코드 집중의 분석 및 설계 -> 자주 함께 사용되는 데이터끼리는 가까운 곳에 저장한다.
 
 
 
-## [13] 반정규화/역정규화(De-normalization)
-### 1. 정의
+## 13. 반정규화/역정규화(De-normalization)
+### 13.1. 정의
 시스템의 성능향상과 개발/운영의 단순화를 위해 기존 설계를 재구성하는 것
 
 데이터의 정합성과 데이터의 무결성을 우선으로 할지, 데이터베이스 구성의 단순화와 성능을 우선으로 할지 결정해야 함
 
 트랜잭션 발생량이 많아 시스템 성능에 크게 영향을 주는 테이블만을 대상으로 한다.
 
-### 2. 반정규화 과정
+### 13.2. 반정규화 과정
 1. 반정규화 대상 조사
 : 범위처리 빈도수 조사
 : 테이블 조인 개수
@@ -501,7 +500,7 @@ A ->> B
 : 속성의 반정규화
 : 관계의 반정규화
 
-### 3. 반정규화 대상 조사
+### 13.3. 반정규화 대상 조사
 1. 상관 모델링
 : 트랜잭션의 빈도수를 예상하기 위해 업무 프로세스와 데이터베이스의 상관성을 설계하는 작업
 : 업무가 처리되는 과정에 따라 데이터가 어떻게 영향을 받고 있는지 분석하여 설계
@@ -509,7 +508,7 @@ A ->> B
 2. CRUD MATRIX
 : CRUD 4가지 유형으로 업무가 진행되는 절차에 따른 데이터의 상관관계를 분석
 
-### 4. TABLE 반정규화
+### 13.4. TABLE 반정규화
 정규화 과정에 의해 분리된 두 테이블에 많은 트랜잭션이 발생하여 JOIN 연산으로 인해 시스템 저하가 일어날 수 있으므로이런 경우 두 테이블을 병합
 
 TABLE 분할 - 수직적 분할 / 수평적 분할
@@ -519,7 +518,7 @@ TABLE 분할 - 수직적 분할 / 수평적 분할
 2. 테이블의 수평적 분할(Horizontal Partitioning)
 : 천만 개의 데이터를 백만개 데이터 10개로 자른다.
 
-### 5. Column(속성)의 반정규화
+### 13.5. Column(속성)의 반정규화
 1. 중복 컬럼 방법
 : 해당 테이블에서 자주 사용하는 다른 테이블의 컬럼을 해당 테이블에도 복사한다.
 
@@ -527,10 +526,10 @@ TABLE 분할 - 수직적 분할 / 수평적 분할
 : 필요에 의해 특정 속성값으로 만들어지는 파생 컬럼을 추가
 
 
-## [14] View 설계
-### 1. View
+## 14. View 설계
+### 14.1. View
 가상테이블
-### 2. DDL
+### 14.2. DDL
 ```sql
 CREATE VIEW name(attr1, attr2, ...) AS
 SELECT attr, ...
@@ -539,20 +538,20 @@ WHERE condition
 ```
 
 
-## [15] 인덱스(Index) 설계
-### 1. 정의
+## 15. 인덱스(Index) 설계
+### 15.1. 정의
 데이터베이스에서 원하는 데이터를 좀더 빨리 찾아줄 수 있도록 데이터의 위치정보를 모아놓은 개체
 
 항상 정렬 상태로 유지되며 성능 향상에 기여한다.
 
 수정이 자주 발생하지 않는 컬럼을 인덱스로 선정한다.
 
-### 2. 데이터 검색 방법
+### 15.2. 데이터 검색 방법
 1. FTS(Full Table SCAN)
 
 2. INDEX SCAN
 
-### 3. 인덱스의 종류
+### 15.3. 인덱스의 종류
 1. Clustered INDEX
 : 인덱스 기준으로 데이터를 정렬
 : 검색 속도가 빠르고 범위 조회(Range Query)에서 빠르다
@@ -568,17 +567,17 @@ WHERE condition
 : 더 많은 공간 차지
 : 루트 -> 리프 -> 데이터 페이지
 
-### 4. 선택성(Selectivity)
+### 15.4. 선택성(Selectivity)
 선택될 수 있는 빈도
 
 분포도가 높으면 선택성이 낮아진다.
 
 
 
-## [16] 관계 데이터 연산
+## 16. 관계 데이터 연산
 SOC(Structure, Operation, Constraint)
 
-### 1. 관계 대수(Relational Algebra)
+### 16.1. 관계 대수(Relational Algebra)
 원하는 정보와 그 정보를 어떻게 유도하는가를 기술하는 절차적인 언어
 
 일반 집합 연산자 / 순수 관계 연산자
@@ -599,19 +598,17 @@ SOC(Structure, Operation, Constraint)
     PROJECT
     : 튜플의 수직적 부분집합
 
-### 2. 관계해석 Relational Calculus
+### 16.2. 관계해석 Relational Calculus
 원하는 정보가 무엇이라는것만 정의하는 비절차적 언어
 
 
 
----
----
----
+<br><br>
 # DB 구축 - SQL
-## [17] DDL(Data Definition Language)
+## 17. DDL(Data Definition Language)
 Metadata in System Catalog = Data Dictionary
 
-### 1. CREATE
+### 17.1. CREATE
 ```sql
 CREATE DOMAIN GENDER CHAR(2)
 DEFAULT '여'
@@ -643,34 +640,34 @@ CREATE UNIQUE INDEX 학번_idx
 ON 학생(학번 ASC);
 ```
 
-### 2. ALTER
+### 17.2. ALTER
 ```sql
 ALTER TABLE 학생 ADD/ALTER/DROP 연락처 VARCHAR(13)
 ```
 
-### 3. DROP
+### 17.3. DROP
 
 
-## [18] DCL(Data Control Language)
-## 1. COMMIT
+## 18. DCL(Data Control Language)
+### 18.1. COMMIT
 
-## 2. ROLLBACK
+### 18.2. ROLLBACK
 
-## 3. GRANT
+### 18.3. GRANT
 ```sql
 GRANT SELECT, DELETE ON STUDENT 
 TO U1 WITH GRANT OPTION;
 ```
 
-## 4. REVOKE
+### 18.4. REVOKE
 ```sql
 REVOKE SELECT, DELETE ON STUDENT
 FROM U1 CASCADE;
 ```
 
 
-## [19] DML(Data Manipulation Language)
-### 1. SELECT
+## 19. DML(Data Manipulation Language)
+### 19.1. SELECT
 ```sql
 SELECT * 
 FROM 학생;
@@ -771,7 +768,7 @@ FROM 학생 A LEFT OUTER JOIN 수강 B ON (A.학번 = B.학번)
 WHERE A.학과 = '전기';
 ```
 
-### 2. INSERT
+### 19.2. INSERT
 ```sql
 INSERT INTO 학생(학번, 성명) VALUES(500, 을지문덕);
 ```
@@ -787,7 +784,7 @@ FROM 학생
 WHERE 학년 = 4;
 ```
 
-### 3. DELETE
+### 19.3. DELETE
 ```sql
 DELETE FROM 학생 WHERE 성명 = '홍길동';
 ```
@@ -796,13 +793,13 @@ DELETE FROM 학생 WHERE 성명 = '홍길동';
 DELETE FROM 학생;
 ```
 
-### 4. UPDATE
+### 19.4. UPDATE
 ```sql
 UPDATE 학생 SET 학과 = '영어영문' WHERE 성명 = '이순신';
 ```
 
 
-## [20] Trigger
+## 20. Trigger
 ```sql
 CREATE TRIGGER 입고INS ON 입고 FOR INSERT
 AS 
@@ -814,11 +811,11 @@ SET 재고수량 = 재고수량 + @QTY
 WHERE 상품코드 = @CODE
 ```	
 
-## [21] 내장형SQL(Embedded SQL)
+## 21. 내장형SQL(Embedded SQL)
 삽입 SQL, 프로그램 언어에 삽입된 SQL
 
 
-## [22] 커서(Cursor)
+## 22. 커서(Cursor)
 복수 개의 튜플에 접근 가능하기 위한 레코드 집합의 포인터
 
 명령어
@@ -827,13 +824,11 @@ WHERE 상품코드 = @CODE
 3. FETCH
 4. CLOSE
 
----
----
----
+<br><br>
 # 회복과 병행제어
-## [23] 트랜잭션(Transaction)
+## 23. 트랜잭션(Transaction)
 DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 있다.
-### 1. 특징 - ACID
+### 23.1. 특징 - ACID
 1. 원자성(Atomicity)
 2. 일관성(Consistency)
 3. 격리성(Isolation)
@@ -852,12 +847,12 @@ DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 �
 영속성(Durability)
 : 트랜잭션에 의해서 생성된 결과는 계속 유지되어야 한다.
 
-### 2. 연산
+### 23.2. 연산
 1. COMMIT
 2. ROLLBACK
 
-## [24] 회복(Recovery)
-### 1. 장애의 유형
+## 24. 회복(Recovery)
+### 24.1. 장애의 유형
 1. 실행장애
 : ROLLBACK으로 종료된 경우
 
@@ -870,7 +865,7 @@ DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 �
 4. 미디어 장애
 : 저장장치의 문제
 
-### 2. 중복 저장 기법
+### 24.2. 중복 저장 기법
 1. 덤프(Dump)
 : 주기적으로 데이터베이스 전체를 다른 저장장치에 복제하는 기법
 
@@ -878,7 +873,7 @@ DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 �
 : 데이터베이스가 변경될 때마다 변경되는 데이터 항목의 이전 값과 이후 값을 별도로 기록하는 기법
 
 
-### 3. 회복의 원리
+### 24.3. 회복의 원리
 1. shadowing 기법
 : dump해놨던 데이터를 그대로 불러와서 원본 데이터를 복원한다.
 
@@ -888,7 +883,7 @@ DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 �
     2. undo
     : 장애 발생 당시 실행 중이던 트랜잭션들의 실행을 되돌린다.
 
-### 4. 회복 기법의 종류
+### 24.4. 회복 기법의 종류
 1. 즉시 갱신(Immediate Update)
 : 
 2. 지연 갱신(Deferred Modification)
@@ -897,30 +892,30 @@ DB에서 처리되는 작업의 단위로 연산의 집합으로 이루어져 �
 : 
 
 
-## [25] 병행 제어(Concurrency Control)
-### 1. 갱신 분실(Lost Update)
+## 25. 병행 제어(Concurrency Control)
+### 25.1. 갱신 분실(Lost Update)
 두 개 이상의 트랜잭션이 같은 자료를 공유하여 갱신할 때 갱신 결과의 일부가 분실되는 현상이다.
 
 race condition
 
-### 2. 비완료 의존성(Uncommited Dependency)
+### 25.2. 비완료 의존성(Uncommited Dependency)
 하나의 트랜잭션 수행이 실패한 후 회복되기 전에 다른 트랜잭션이 실패한 갱신 결과를 참조하는 현상이다.
 
 dirty read
 
-### 3. 모순성(Inconsistency)
+### 25.3. 모순성(Inconsistency)
 
-### 4. 연쇄 복귀(Cascade Rollback)
+### 25.4. 연쇄 복귀(Cascade Rollback)
 병행 수행되던 트랜잭션들의 하나에 문제가 생겨 Rollback하는다른 트랜잭션도 함께 Rollback되는 현상이다.
 
-### 5. 병행제어의 정의
+### 25.5. 병행제어의 정의
 Concurrency가 가능하도록 해주는 작업
 
-### 6. Scheduling
+### 25.6. Scheduling
 1. 직렬 스케줄(Serial Schedule)
 2. 비직렬 스케줄(Nonserial Schedule)
 
-### 7. 병행제어 기법의 종류
+### 25.7. 병행제어 기법의 종류
 1. 로킹(Locking)
 : deadlock의 위험이 있다.
 
