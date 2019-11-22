@@ -258,6 +258,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+post_archive:
+  typs: liquid
+  path: /year-archive/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
