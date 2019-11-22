@@ -33,8 +33,8 @@ layout: default
             {% if page.last_modified_at %}
               <i class="fa fa-fw fa-calendar-alt" aria-hidden="true" style="width:15px; margin-right:3.5px;"></i>{{ site.data.ui-text[site.locale].date_label | default: "Updated:" }} 
               <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time>
+              <br>
             {% endif %}
-            <br>
             {% if page.read_time %}
               <i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}
             {% endif %}
