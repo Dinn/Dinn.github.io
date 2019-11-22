@@ -2,7 +2,7 @@
 title: "정보처리기사 실기 데이터베이스 요약"
 excerpt: "정보처리기사 2019년 3회차를 응시하기 위해 데이터베이스 과목을 공부하며 기록한 요약본입니다."
 date: 2019-11-21
-last_modified_at: 2019-11-22T16:34:09
+last_modified_at: 2019-11-22T16:55:58
 
 toc_sticky: false
 
@@ -19,9 +19,9 @@ tags:
 내용은 다음을 참고하여 작성하였으며 2020년 부터는 정처기 시험이 개편된다곤 하지만 DB의 전체적인 흐름을 파악하는데 도움이 되고자 업로드 하였습니다.
 
 ## References
-> [\[정보처리기사실기\] 요약 정리본 - Gyoogle(규글)](https://kim6394.tistory.com/74?category=659595)
+> [\[정보처리기사실기\] 요약 정리본 - Gyoogle(규글)](https://kim6394.tistory.com/74?category=659595 "https://kim6394.tistory.com/74?category=659595")
 >
-> [정보처리 실기_데이터베이스 - YouTube](https://www.youtube.com/playlist?list=PLimVTOIIZt2aP6msQIw0011mfVP-oJGab)
+> [정보처리 실기_데이터베이스 - YouTube](https://www.youtube.com/playlist?list=PLimVTOIIZt2aP6msQIw0011mfVP-oJGab "https://www.youtube.com/playlist?list=PLimVTOIIZt2aP6msQIw0011mfVP-oJGab")
 >
 
 
@@ -329,7 +329,7 @@ ER model(개념적 모델) -> Relation Schema(논리적 모델)
 : 2개 이상의 속성을 조합하여 만든 키
 
 
-## 8.무결성 제약(Integrity Constraint)
+## 8. 무결성 제약(Integrity Constraint)
 ### 8.1. 무결성
 DB에 저장된 값과 그것이 표현하는 현실세계 실제 값이 일치하는 정확성. 데이터의 정확성/정합성
 
