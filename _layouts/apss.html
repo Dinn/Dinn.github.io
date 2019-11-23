@@ -12,7 +12,7 @@ layout: archive
     <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
       <ol>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
-          {% for post in category.last %}
+          {% for post in category.last reversed%}
             <li>
               {% if post.header.teaser %}
                 {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
