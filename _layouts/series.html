@@ -2,17 +2,17 @@
 layout: archive
 ---
 <!--
-  알고리즘 문제 해결 전략(Algorithm Problem Solving Strategies) 시리즈 전용의 layout
+  한 카테고리를 업로드 순으로 보여주는 레이아웃
 -->
 
 {{ content }}
 
 {% for category in site.categories %}
-  {% if category[0] == "Algorithm Problem Solving Strategies" %}
+  {% if category[0] == <!-- category name here --> %}
     <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
       <ol>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
-          {% for post in category.last reversed%}
+          {% for post in category.last reversed %}
             <li>
               {% if post.header.teaser %}
                 {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
