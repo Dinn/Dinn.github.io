@@ -1,0 +1,58 @@
+---
+layout: archive
+---
+<!--
+  알고리즘 문제 해결 전략(Algorithm Problem Solving Strategies) 시리즈 전용의 layout
+-->
+
+{{ content }}
+
+{% for category in site.categories %}
+  {% if category[0] == "Algorithm Problem Solving Strategies" %}
+    <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
+      <ol>
+        <div class="entries-{{ page.entries_layout | default: 'list' }}">
+          {% for post in category.last reversed %}
+            <li>
+              {% if post.header.teaser %}
+                {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+              {% else %}
+                {% assign teaser = site.teaser %}
+              {% endif %}
+
+              {% if post.id %}
+                {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+              {% else %}
+                {% assign title = post.title %}
+              {% endif %}
+              <div class="{{ include.type | default: "list" }}__item">
+                <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+                  {% if include.type == "grid" and teaser %}
+                    <div class="archive__item-teaser">
+                      <img src=
+                        {% if teaser contains "://" %}
+                          "{{ teaser }}"
+                        {% else %}
+                          "{{ teaser | relative_url }}"
+                        {% endif %}
+                        alt="">
+                    </div>
+                  {% endif %}
+                  <h3 class="archive__item-title" itemprop="headline">
+                    {% if post.link %}
+                      <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+                    {% else %}
+                      <a href="{{ post.url | relative_url }}" rel="permalink">
+                      {{ title }}</a>
+                    {% endif %}
+                  </h3>
+                </article>
+              </div>
+            </li>
+          {% endfor %}
+        </div>
+      </ol>
+      <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+    </section>
+  {% endif %}
+{% endfor %}
