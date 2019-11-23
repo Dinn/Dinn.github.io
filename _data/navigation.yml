@@ -10,6 +10,8 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+ - title: "알고리즘 문제 해결 전략"
+   url: /algorithm-problem-solving-strategies/
  - title: "Categories"
    url: /categories/
  - title: "Posts"
