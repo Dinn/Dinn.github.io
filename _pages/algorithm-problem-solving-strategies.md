@@ -10,3 +10,4 @@ permalink: /algorithm-problem-solving-strategies/
 1. [3장 코딩과 디버깅에 관하여 2]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-3-5/)
 1. [3장 코딩과 디버깅에 관하여 3]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-3-6/)
 1. [4장 알고리즘 분석]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-4-1/)
+1. [5장 알고리즘의 정당성 분석]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-5-1/)
