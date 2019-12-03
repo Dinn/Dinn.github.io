@@ -2,14 +2,19 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  #   description: 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  #   description: 
   # - title: "Sample Posts"
   #   url: /year-archive/
+  #   description: 
   # - title: "Sample Collections"
   #   url: /collection-archive/
+  #   description: 
   # - title: "Sitemap"
   #   url: /sitemap/
+  #   description: 
  - title: "알고리즘 문제 해결 전략"
    url: /algorithm-problem-solving-strategies/
  - title: "Categories"
