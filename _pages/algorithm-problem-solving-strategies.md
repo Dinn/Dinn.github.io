@@ -13,3 +13,4 @@ permalink: /algorithm-problem-solving-strategies/
 1. [5장 알고리즘의 정당성 분석]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-5-1/)
 1. [6장 무식하게 풀기]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-1/)
 1. [6장 무식하게 풀기 2]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-5/)
+1. [6장 무식하게 풀기 3]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-8/)
