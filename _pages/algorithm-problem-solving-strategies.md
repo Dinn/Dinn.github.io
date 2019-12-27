@@ -14,3 +14,4 @@ permalink: /algorithm-problem-solving-strategies/
 1. [6장 무식하게 풀기]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-1/)
 1. [6장 무식하게 풀기 2]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-5/)
 1. [6장 무식하게 풀기 3]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-6-8/)
+1. [7장 분할 정복 2]({{ site.url }}/algorithm%20problem%20solving%20strategies/algorithm-7-2/)
