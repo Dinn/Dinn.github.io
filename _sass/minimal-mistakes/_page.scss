@@ -54,7 +54,7 @@ body {
     margin-right: 0;
     width: 100%;
     clear: both;
-
+    
     .page__content,
     .page__meta,
     .page__share {
@@ -65,6 +65,22 @@ body {
       width: 100%;
       clear: both;
     }
+  }
+}
+
+/* 2019.12.29 */
+/* font-size increased no more than 16px */
+.page__inner-wrap {
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 16px;
   }
 }
 
@@ -83,6 +99,11 @@ body {
 }
 
 .page__content {
+  h1 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $border-color;
+  }     // 2019.12.29 bottom border for h1 added
+  
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
