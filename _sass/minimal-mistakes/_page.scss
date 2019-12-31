@@ -528,10 +528,12 @@ body {
 
   @include breakpoint($large) {
     float: right;
+    font-size: 18px;
     width: calc(100% - #{$right-sidebar-width-narrow});
   }
 
   @include breakpoint($x-large) {
+    font-size: 20px;
     width: calc(100% - #{$right-sidebar-width});
   }
 
