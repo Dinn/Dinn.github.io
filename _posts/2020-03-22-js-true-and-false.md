@@ -1,8 +1,8 @@
 ---
 title: '참거짓 값과 Boolean객체'
-excerpt:
+excerpt: 'True or False'
 date: 2020-03-28
-last_modified_at:
+last_modified_at: 2020-03-28T18:00:36
 
 category:
  - JavaScript
