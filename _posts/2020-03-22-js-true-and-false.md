@@ -1,6 +1,6 @@
 ---
-title: '참거짓 값과 Boolean객체'
-excerpt: 'True or False'
+title: 'JavaScript \| 참거짓 값과 Boolean객체'
+excerpt: 'JavaScript에서 참거짓을 나타내는 값을 정리하였습니다.'
 date: 2020-03-28
 last_modified_at: 2020-03-28T18:00:36
 
@@ -12,6 +12,8 @@ tags:
  - ECMAScript
  - JS
  - ES6
+ - Boolean
+ - true or false
 ---
 
 
