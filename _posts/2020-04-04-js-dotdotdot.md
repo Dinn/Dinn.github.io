@@ -227,7 +227,7 @@ let arr4 = [...arr3];
 let arr5 = ['d', 'e'];
 
 Array.prototype.splice.apply(arr3, [3, 0].concat(arr5));    // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-arr4.splice(3, 0, ...arr5);                           // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+arr4.splice(3, 0, ...arr5);                                 // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 ```
 `[...arr3]`를 하여 `arr3`를 복사 한 뒤(swallow copy) `arr3`엔 `apply`를 이용한 기존 방식의 `splice()`를, `arr4`에는 spread operator를 이용한 `splice()`를 적용했습니다.
 
