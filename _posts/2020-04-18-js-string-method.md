@@ -2,7 +2,7 @@
 title: 'JavaScript \| String Methods'
 excerpt: 'String intstances의 methods를 정리하였습니다.'
 date: 2020-04-18
-last_modified_at: 2020-04-20T13:40:45
+last_modified_at: 2020-04-20T19:10:00
 
 category:
  - JavaScript
@@ -62,10 +62,10 @@ tags:
 #### `String.prototype.charAt(index)`
 `index`에 위치한 문자를 반환합니다. `index`가 문자열의 길이를 벗어났을 경우엔 빈 문자열을 반환합니다.
 
-#### `String.prototype.indexOf(searchValue [, fromIndex])`
+#### `String.prototype.indexOf(searchValue[, fromIndex])`
 문자열에서 `searchValue`와 일치하는 첫번째 문자의 위치를 반환하며 일치하는 문자가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 지정해줄 수 있습니다.
 
-#### `String.prototype.lastIndexOf(searchValue [, fromIndex])`
+#### `String.prototype.lastIndexOf(searchValue[, fromIndex])`
 문자열에서 `searchValue`와 일치하는 마지막 문자의 위치를 반환하며 일치하는 문자가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 지정해줄 수 있습니다.
 
 
@@ -85,13 +85,13 @@ tags:
 
 ## includes / startsWith / endsWith
 
-#### `String.prototype.includes(searchString [, position])`
+#### `String.prototype.includes(searchString[, position])`
 문자열에 `searchString`이 있는지 여부를 판단합니다. 있다면 `true`를, 없다면 `false`를 반환하며 `position`으로 검색을 시작하는 위치를 설정할 수 있습니다.
 
-#### `String.prototype.startsWith(searchString [, position])`
+#### `String.prototype.startsWith(searchString[, position])`
 문자열이 `searchString`으로 시작하는지 여부를 판단합니다. `searchString`으로 시작한다면 `true`를, 아니면 `false`를 반환하며 `position`으로 시작 위치를 설정할 수 있습니다.
 
-#### `String.prototype.endsWith(searchString [, position])`
+#### `String.prototype.endsWith(searchString[, position])`
 문자열이 `searchString`으로 끝나는지 여부를 판단합니다. `searchString`으로 끝난다면 `true`를, 아니면 `false`를 반환하며 `position`으로 끝 위치를 설정할 수 있습니다.
 
 ```js
@@ -111,7 +111,7 @@ str.endsWith('moss', 3);      // false;
 
 ## localeCompare
 
-#### `String.prototype.localeCompare(compareString [, locales [, options]])`
+#### `String.prototype.localeCompare(compareString[, locales[, options]])`
 두 문자열을 비교해서 같다면 `0`, 사전 순으로 `compareString`이 먼저 나오면 양수, 뒤에 나오면 음수를 반환합니다.
 
 ```js
@@ -128,13 +128,13 @@ str2.localeCompare(str3);     // -1 (str2 - str3)
 
 ## concat / substring / slice
 
-#### `String.prototype.concat(str [, ...strN])`
+#### `String.prototype.concat(str[, ...strN])`
 문자열 뒤에 입력 받은 문자열을 붙여 새로운 문자열을 반환합니다.
 
-#### `String.prototype.substring(begin [, end])`
+#### `String.prototype.substring(begin[, end])`
 `begin`와 `end` 사이에 있는 문자열을 반환합니다. `substr()`의 사용은 권장되지 않습니다.
 
-#### `String.prototype.slice(begin [, end])`
+#### `String.prototype.slice(begin[, end])`
 `begin`와 `end` 사이에 있는 문자열을 반환합니다.
 
 
@@ -182,10 +182,10 @@ str.slice(-5, 15);        // '56789'  str.slice(str.length - 5, str.length - 1);
 #### `String.prototype.repeat(count)`
 문자열이 `count`번 만큼 반복되는 문자열을 반환합니다.
 
-#### `String.prototype.padStart(targetLength [, padString])`
+#### `String.prototype.padStart(targetLength[, padString])`
 현재의 문자열 앞에 `padString`이 반복적으로 오는, 길이가 `targetLenth`인 문자열을 반환합니다. 
 
-#### `String.prototype.padEnd(targetLength [, padString])`
+#### `String.prototype.padEnd(targetLength[, padString])`
 현재의 문자열 뒤에 `padString`이 반복적으로 오는, 길이가 `targetLenth`인 문자열을 반환합니다. 
 
 ```js
@@ -243,7 +243,7 @@ str.replace(/b..e/gi, '   ');   // "A    FG a    fg"
 
 ## split / toString
 
-#### `String.prototype.split([seperator [, limit])`
+#### `String.prototype.split([seperator[, limit])`
 `seperator`를 기준으로 쪼갠 문자열로 구성된 배열을 반환합니다. `seperator`는 문자열이나 정규표현식이 올 수 있으며 `seperator`가 빈 문자열이라면 한 글자 씩으로 쪼개진 배열을 얻을 수 있습니다. `limit`를 입력한다면 배열의 크기가 `limit`일 때까지만 `split()`을 수행합니다.
 
 #### `String.prototype.toString()`
