@@ -182,6 +182,18 @@ td > code {
   }
 }
 
+strong > code {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  background: $code-background-color;
+  border-radius: $border-radius;
+  &:before,
+  &:after {
+    letter-spacing: -0.2em;
+    content: "\00a0"; /* non-breaking space*/
+  }
+}               // 2020-04-18 added
+
 /* horizontal rule */
 
 hr {

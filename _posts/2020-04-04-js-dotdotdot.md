@@ -10,6 +10,7 @@ category:
 tags:
  - JavaScript
  - ECMAScript
+ - JS
  - ES6
  - three dots in js
  - spread operator
