@@ -2,7 +2,7 @@
 title: 'JavaScript \| String Methods'
 excerpt: 'String intstances의 methods를 정리하였습니다.'
 date: 2020-04-18
-last_modified_at: 2020-04-20T19:10:00
+last_modified_at: 2020-04-21T17:24:04
 
 category:
  - JavaScript
@@ -63,10 +63,10 @@ tags:
 `index`에 위치한 문자를 반환합니다. `index`가 문자열의 길이를 벗어났을 경우엔 빈 문자열을 반환합니다.
 
 #### `String.prototype.indexOf(searchValue[, fromIndex])`
-문자열에서 `searchValue`와 일치하는 첫번째 문자의 위치를 반환하며 일치하는 문자가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 지정해줄 수 있습니다.
+문자열에서 처음으로 등장하는 `searchValue`의 위치를 반환하며 문자열에 `searchValue`가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 지정해줄 수 있습니다.
 
 #### `String.prototype.lastIndexOf(searchValue[, fromIndex])`
-문자열에서 `searchValue`와 일치하는 마지막 문자의 위치를 반환하며 일치하는 문자가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 지정해줄 수 있습니다.
+문자열의 뒤에서부터 처음으로 등장하는(맨 마지막에 있는) `searchValue`의 위치를 반환하며 문자열에 `searchValue`가 없을 시 `-1`을 반환합니다. `fromIndex`를 사용하여 검색을 시작할 위치를 뒤에서부터 `fromIndex` 번째로 지정해줄 수 있습니다.
 
 
 
