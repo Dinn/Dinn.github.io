@@ -5,11 +5,12 @@ date: 2020-03-28
 last_modified_at: 2020-04-04T20:29:57
 
 category:
- - linux
+ - Ubuntu
 
 tags:
- - linux
  - ubuntu
+ - linux
+ - surface pro 4
  - partition
  - dual booting
 ---
