@@ -368,18 +368,52 @@ let myDog = new Retriever(2, 70);
 
 이번에는 `Dog`를 상속받는 `Retriever`를 만들어 보았습니다.
 
-`Dog.prototype.cries()`와 `Retriever.prototype.cries()`는 각각 상속받는 프로토타입의 `cries()`를 **method overriding** 했습니다.
+`Dog.prototype.cries()`와 `Retriever.prototype.cries()`는 각각 상속받는 프로토타입의 `cries()`를 method overriding 했습니다.
 
-최종적으로 이렇게 정의된 `Animal`과 `Dog`과 `Retriever`의 관계를 도식화하면 다음과 같습니다.\
+최종적으로 이렇게 정의된 `Animal`과 `Dog`과 `Retriever`의 관계를 도식화하면 다음과 같습니다.
 
-[10][inheritance]
+![11][inheritance]
 
 앞서 이런 메커니즘을 몇번 언급하긴 했는데 이렇게 타고 올라가 프로토타입의 프로퍼티/메소드에 접근하는 것을 프로토타입 체이닝 이라고 합니다. 
 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_object_model
 
-## ES6에서 하는 법
+## ES6에서의 상속
+
+```js
+class Animal {
+  constructor(age, weight) {
+    this.age = age;
+    this.weight = weight;
+  }
+
+  cries() {
+    return "";
+  }
+}
+
+class Dog extends Animal {
+  constructor(age, weight) {
+    super(age, weight);
+  }
+
+  cries() {
+    return "bark";
+  }
+}
+
+class Retriever extends Dog {
+  constructor(age, weight) {
+    super(age, weight);
+    this.temperament = ["intelligent". "affectionate"];
+  }
+
+  cries() {
+    return super() + ": Ruff!";
+  }
+}
+```
 
 
 ## References
@@ -413,6 +447,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_obj
 >
 > [Object.create() - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
+### ES6에서의 상속
+> [Class \| PoiemaWeb](https://poiemaweb.com/es6-class)
+>
+>
 
 hoisting 얘기
 hasOwnProperty
@@ -423,8 +461,8 @@ hasOwnProperty
 [b proto a]: /assets/images/2020-05-05-js-prototype/prototype03-b-proto-a.png
 [function]: /assets/images/2020-05-05-js-prototype/prototype04-function.png
 [function prototype]: /assets/images/2020-05-05-js-prototype/prototype05-function-prototype.png
-[prototype constructor]: /assets/images/2020-05-05-js-prototype/prototype06-prototype-constructor.png
-[prototype]: /assets/images/2020-05-05-js-prototype/prototype07-prototype.png
+[prototype constructor]: /assets/images/2020-05-05-js-prototype/prototype06-prototype-constructor.jpg
+[prototype]: /assets/images/2020-05-05-js-prototype/prototype07-prototype.jpg
 [no child prototype]: /assets/images/2020-05-05-js-prototype/prototype08-no-child-prototype.png
 [child prototype]: /assets/images/2020-05-05-js-prototype/prototype09-child-prototype.png
 [no constructor]: /assets/images/2020-05-05-js-prototype/prototype10-no-constructor.png
