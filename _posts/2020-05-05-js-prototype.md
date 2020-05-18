@@ -1,8 +1,8 @@
 ---
 title: 'JavaScript \| 객체와 프로토타입 그리고 상속'
 excerpt: '프로토타입 기반 언어(prototype-based language)인 JavaScript에서 객체를 어떻게 생성하고 상속은 어떻게 받는지, 그리고 프로토타입이란 무엇인지를 알아보았습니다.'
-date: 2020-05-05
-last_modified_at:
+date: 2020-05-19
+last_modified_at: 2020-05-19T01:05:28
 
 category:
  - JavaScript
@@ -26,6 +26,16 @@ JavaScript는 **프로토타입 기반(prototype-based)**의 객체 지향 프�
 이번 글은 JavaScript에서 객체를 생성하는 방법부터 프로토타입, 상속 등을 폭 넓게 다뤄보고자 합니다.
 
 양이 매우 길어져서 한번에 다 읽기 어려울 수도 있겠지만, 해당 주제들이 워낙 연관돼 있어서 한번에 다루는 것이 전체적인 흐름 파악에 더 도움이 될 것이라 생각했습니다.
+
+
+## Shortcuts
+[프로토타입이란?](#prototype)
+
+[프로토타입 체인이란?](#prototype-chain)
+
+[상속 예시 코드 - ES5](#retriever)
+
+[상속 예시 코드 - ES6](#es6에서의-상속)
 
 
 
@@ -81,7 +91,7 @@ person.sayHello("world");         // "Hello, world!"
 let emptyObj = new Object();
 ```
 
-단, JavaScript에서는 **함수를 constructor로 사용**합니다. instance를 만들기 위해 정의한 함수가 아니더라도 `new`와 함께 쓰인다면 constructor처럼 쓰일 수 있다는 것입니다. 그래서 constructor와 일반 함수를 구분하기 위해 관례적으로 constructor는 대문자로 시작하길 권장됩니다.
+단, JavaScript에서는 **함수를 constructor로 사용**합니다. instance를 만들기 위해 정의한 함수가 아니더라도 `new`와 함께 쓰인다면 constructor처럼 쓰일 수 있다는 것입니다. 그래서 constructor와 일반 함수를 구분하기 위해 constructor는 대문자로 시작하는 것이 관례입니다.
 
 ```js
 function Person(firstName, lastName, sex) {
@@ -173,7 +183,7 @@ console.log(typeof newObj);       // object
 
 프로토타입에 대한 설명은 바로 아래에 이어지기 때문에 `Object.create()`는 그때 더 자세히 다루겠습니다.
 
-일단은 `Object.create()`으로 새로운 객체를 생성할 수 있다는 정도까지만 이해하고 넘어가면 되겠습니다.
+일단은 `Object.create()`로 새로운 객체를 생성할 수 있다는 정도까지만 이해하고 넘어가면 되겠습니다.
 
 
 
@@ -296,6 +306,8 @@ JavaScript는 대신 **프로토타입을 활용하여 상속**을 구현합니�
 
 일단 코드를 보겠습니다.
 
+
+### Animal
 ```js
 function Animal(age, weight) {
   this.age = age;
@@ -310,10 +322,21 @@ Animal.prototype.cries = function() {
 
 그런데 `Animal`의 메소드 `cries()`를 생성자 안에서 `this.cries = function() {...}`으로 선언하지 않고 `Animal.prototype` 객체 안에 정의하였습니다.
 
-`this.cries = function() {...}`와 `Animal.prototype.cries = function() {...}`의 차이는 `new Animal(...)`로 생성되는 각 인스턴스 객체가 자신의 프로퍼티로 `cries()`를 직접 갖느냐 아니냐로 갈리는데 왜 위 코드와 같이 프로토타입에 정의해줘야 하는지에 대한 자세한 이유는 아래의 링크에서 확인할 수 있습니다.
+`this.cries = function() {...}`와 `Animal.prototype.cries = function() {...}`의 차이는 `new Animal(...)`로 생성되는 각 인스턴스 객체가 자신의 프로퍼티로 `cries()`를 직접 갖느냐 아님 `Animal.prototype`이 대신 갖느냐로 갈립니다. 왜 위 코드와 같이 프로토타입에 정의해줘야 하는지에 대한 자세한 이유는 아래의 링크에서 확인할 수 있습니다.
 
 > [Javascript Prototype methods vs Object methods](https://veerasundar.com/blog/2014/02/javascript-prototype-methods-vs-object-methods/)
 
+메소드와 관련해서 한 가지만 더 짚고 넘어가겠습니다. 만약 `cries()`를 static method로 선언하고 싶다면 메소드를 `Animal`에 직접 추가해줍니다.
+
+```js
+// static method
+Animal.cries = function() {
+  return "";
+}
+```
+
+
+### Dog
 ```js
 function Dog(age, weight) {
   Animal.call(this, age, weight);
@@ -338,18 +361,41 @@ Animal.prototype === Object.create(Animal.prototype);       // false
 
 일단 함수 `Dog()`을 정의하고 나서 `Dog.prototype`에 아무것도 하지 않았을 때 `Dog.prototype` 객체의 상태는 아래와 같을 것입니다.
 
-![08][no child prototype]
+`Dog.prototype`
+: `constructor: Dog()`
+: `__proto__: Object.prototype`
 
-보다시피 `Dog.prototype`은 `constructor: Dog()`을 가지며 프로토타입이 `Object.prototype`인 객체입니다. 여기서 `Dog`과 `Animal`이 프로토타입적으로 이어져서 상속관계를 형성하기 위해선 `Dog.prototype.__proto__ === Animal.prototype`이 성립해야 합니다. 다시 말해, 아래의 이미지처럼 `Dog.prototype`의 프로토타입이 `Animal.prototype`인 객체가 `Dog.prototype`에 와야하는 것입니다.
+<!--![08][no child prototype]-->
 
-![09][child prototype]
+여기서 `Dog`과 `Animal`이 프로토타입적으로 이어져서 상속관계를 형성하기 위해 우리가 바라는 모습은 다음과 같습니다.
+
+`Dog.prototype`
+: `constructor: Dog()`
+: <mark style="background-color:BlanchedAlmond">__proto__: Animal.prototype</mark>
+
+<!--![09][child prototype]-->
 
 이를 `Object.create()`를 통해 수행합니다. `Object.create()`는 argument로 받은 **객체를 프로토타입으로 삼는 새로운 객체를 반환**합니다. 말이 조금 복잡한데, `Dog.prototype`은 `Animal.prototype`을 프로토타입으로 삼는 어떤 객체라는 것입니다. (`Object.create(Animal.prototype)`은 `Animal.prototype` 자체가 아닙니다.) 마찬가지로 `new Dog(...)`로 생성되는 객체들의 프로토타입은 `Animal.prototype`을 프로토타입으로 갖는 어떤 객체인 것이고 그 객체를 `Dog.prototype`에 할당했으니 `Dog.prototype`이란 레퍼런스로 접근할 수 있는 것입니다.
 
 ![10][no constructor]
 
-그런데 `Dog.prototype = Object.create(Animal.prototype)`을 하고나면 `Dog.prototype`에는 프로토타입만 `Animal.prototype`으로 설정된 빈 객체가 할당된다는 문제가 있습니다. 그 상태로 `Dog.prototype.constructor`에 접근한다면 `Dog.prototype`에는 `constructor`가 없으므로 프로토타입을 따라 `Animal.prototype`에 있는 `constructor`를 가져오게 됩니다. 우리가 원하는 함수 객체는 생성자 함수를 `constructor`의 값으로 갖고 있으며 `__proto__`값이 `Animal.prototype`이어야 합니다. 그래서 직접 `Dog.prototype.constructor`를 `Dog`으로 지정해 줍니다.
+그런데 `Dog.prototype = Object.create(Animal.prototype)`을 하고나면 `Dog.prototype`에는 프로토타입만 `Animal.prototype`으로 설정된 빈 객체가 할당된다는 문제가 있습니다.
 
+`Dog.prototype`
+: `__proto__: Animal.prototype`
+
+이 상태로 `Dog.prototype.constructor`에 접근한다면 `Dog.prototype`에는 `constructor`가 없으므로 프로토타입을 따라 `Animal.prototype`에 있는 `constructor`를 가져오게 됩니다. 
+
+따라서, 우리가 원하는 함수 객체인 
+
+`Dog.prototype`
+: `constructor: Dog()`
+: `__proto__: Animal.prototype`
+
+를 완성하기 위해 직접 `Dog.prototype.constructor`를 `Dog`으로 지정해 줍니다.
+
+
+### Retriever
 ```js
 function Retriever(age, weight) {
   Dog.call(this, age, wieght);
@@ -370,16 +416,35 @@ let myDog = new Retriever(2, 70);
 
 `Dog.prototype.cries()`와 `Retriever.prototype.cries()`는 각각 상속받는 프로토타입의 `cries()`를 method overriding 했습니다.
 
-최종적으로 이렇게 정의된 `Animal`과 `Dog`과 `Retriever`의 관계를 도식화하면 다음과 같습니다.
+
+### Prototype Chain
+최종적으로 위에서 정의된 `Animal`과 `Dog`과 `Retriever`의 관계를 도식화하면 다음과 같습니다.
 
 ![11][inheritance]
 
-앞서 이런 메커니즘을 몇번 언급하긴 했는데 이렇게 타고 올라가 프로토타입의 프로퍼티/메소드에 접근하는 것을 프로토타입 체이닝 이라고 합니다. 
+`Retriever.prototype`의 인스턴스인 `myDog`부터 시작해서 부모 객체의 프로토타입을 정리해봤습니다.
+
+* `myDog`의 프로토타입 = `Retriver.prototype`
+* `Retriver.prototype`의 프로토타입 = `Dog.prototype`
+* `Dog.prototype`의 프로토타입 = `Animal.prototype`
+* `Animal.prototype`의 프로토타입 = `Object.prototype`
+
+상속 관계의 객체 사이에는 자식이 부모의 프로토타입을 참조하는 관계가 성립합니다.
+
+이렇게 자식에서부터 부모에게로 타고 올라가는 프로토타입의 연결 구조를 **프로토타입 체인(Prototype Chain)**이라고 합니다.
+
+프로토타입 체인을 따라 계속해서 올라가다보면 결국에는 모든 객체의 프로토타입인 `Object.prototype`이 나오며 이 `Object.prototype.__proto__`는 `null`을 가리키고 있습니다. 그러니 모든 프로토타입의 종점은 `null`인 셈입니다.
+
+그리고 한 객체에서 특정 프로퍼티를 조회할 때, 객체가 그 프로퍼티를 갖고 있지 않다면 객체의 프로토타입 체인을 따라 상위 프로토타입으로 올라가며 해당 프로퍼티가 있는지 확인합니다. 이는 메소드를 호출할 때도 마찬가지 입니다. 함수, 배열 그리고 모든 객체들이 `Function`, `Array`, `Object` 등 built-in object에 정의된 메소드를 사용할 수 있는 이유는 바로 이런 메커니즘을 따르기 때문입니다.
+
+이처럼 객체가 프로토타입 체인을 따라 연쇄적으로 프로퍼티나 메소드를 탐색하고 접근하는 것을 **프로토타입 체이닝(Prototype Chaining)**이라고 합니다.
 
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_object_model
 
 ## ES6에서의 상속
+ES6에 들어서, 이전에 알던 클래스 기반 언어의 문법과 아주 유사한 형태로 상속을 구현할 수 있게 됐습니다. 
+
+추가된 `class`, `constructor`, `static`, `extends`, `super` 키워드를 사용해 이전 장의 상속을 구현하였습니다.
 
 ```js
 class Animal {
@@ -415,6 +480,21 @@ class Retriever extends Dog {
 }
 ```
 
+그렇다고 JavaScript가 클래스 기반 프로그래밍이 가능해진 것은 아닙니다.
+
+여전히 클래스는 없고 프로토타입으로 상속 관계를 형성합니다. 위 코드들은 단지 사용자의 편의를 위한 syntactic sugar일 뿐, 내부적으로는 생성자함수에 prototype과 constructor가 지정되고 `[[prototype]]` 값이 부여되는 등 일련의 과정이 동일하게 작동됩니다.
+
+또한 `class`는 인스턴스 생성보다 앞서 정의해야 합니다. 생성자 함수의 경우에는 hoisting 덕분에 인스턴스를 생성하는 코드 이후에 함수를 정의했더라도 정상적으로 작동하지만 `class`는 에러를 발생시킵니다.
+
+```js
+let func = new Func();
+let cls = new Cls();    // Uncaught ReferenceError: Cls is not defined
+
+function Func() {}
+class Cls {}
+```
+
+
 
 ## References
 ### 객체 생성
@@ -425,6 +505,8 @@ class Retriever extends Dog {
 > [JavaScript Object Literal](https://www.dyn-web.com/tutorials/object-literal/)  
 >
 > [What is the difference between an Object Literal and an Instance Object in JavaScript ? \| Kevin Chisholm - Blog](https://blog.kevinchisholm.com/javascript/difference-between-object-literal-and-instance-object/)
+>
+> [Details of the object model - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_object_model)
 
 ### Prototype
 > [Prototype \| PoiemaWeb](https://poiemaweb.com/js-prototype)
@@ -450,10 +532,8 @@ class Retriever extends Dog {
 ### ES6에서의 상속
 > [Class \| PoiemaWeb](https://poiemaweb.com/es6-class)
 >
->
+> [Hoisting - 용어 사전 \| MDN](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)
 
-hoisting 얘기
-hasOwnProperty
 
 
 [proto in console]: /assets/images/2020-05-05-js-prototype/prototype01-proto-in-console.png
