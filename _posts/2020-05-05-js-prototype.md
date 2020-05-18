@@ -2,7 +2,7 @@
 title: 'JavaScript \| 객체와 프로토타입 그리고 상속'
 excerpt: '프로토타입 기반 언어(prototype-based language)인 JavaScript에서 객체를 어떻게 생성하고 상속은 어떻게 받는지, 그리고 프로토타입이란 무엇인지를 알아보았습니다.'
 date: 2020-05-19
-last_modified_at: 2020-05-19T01:05:28
+last_modified_at: 2020-05-19T02:00:02
 
 category:
  - JavaScript
@@ -371,7 +371,7 @@ Animal.prototype === Object.create(Animal.prototype);       // false
 
 `Dog.prototype`
 : `constructor: Dog()`
-: <mark style="background-color:BlanchedAlmond">__proto__: Animal.prototype</mark>
+: <mark style="background-color:BlanchedAlmond"><code>__proto__: Animal.prototype</code></mark>
 
 <!--![09][child prototype]-->
 
