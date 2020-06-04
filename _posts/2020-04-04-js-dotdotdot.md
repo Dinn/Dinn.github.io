@@ -2,7 +2,7 @@
 title: 'JavaScript \| JS에서 점점점(...)은 무엇일까?'
 excerpt: 'Rest Paramenter와 Spread Operator에 대해 알아보겠습니다.'
 date: 2020-04-04
-last_modified_at: 2020-04-06T13:36:25
+last_modified_at: 2020-06-04T16:32:51
 
 category:
  - JavaScript
@@ -12,6 +12,7 @@ tags:
  - ECMAScript
  - JS
  - ES6
+ - ES9
  - three dots in js
  - spread operator
  - rest operator
@@ -45,6 +46,27 @@ let arr1 = [1, 2];
 let arr2 = [6, 7];
 let arr3 = [...arr1, 3, arr2];      // [1, 2, 3, 6, 7]
 arr3.splice(3, 0, ...[4, 5]);       // [1, 2, 3, 4, 5, 6, 7]
+```
+
+Rest Property
+: 객체를 destructuring 할 때 나머지 프로퍼티를 모아준다. 
+
+Spread Property
+: 객체의 각 프로퍼티를 펼친다.
+
+```js
+let obj = {
+  a: 1,
+  b: 2,
+  x: 3,
+  y: 4
+}
+
+let {a, b, ...c} = obj;
+console.log(a, b, c);           // 1 2 {x: 3, y: 4}
+
+let newObj = {a, b, ...c};
+console.log(newObj);            // {a: 1, b: 2, x: 3, y: 4}
 ```
 
 
@@ -234,6 +256,85 @@ arr4.splice(3, 0, ...arr5);                                 // ['a', 'b', 'c', '
 
 
 
+## Object Rest / Spread Properties
+ES9[^1]부터는 객체에서 rest parameter / spread operator 와 유사한 기능을 하는 **rest property**, **spread property** 가 추가되었습니다.
+
+[^1]: [ECMAScript2018](https://www.ecma-international.org/ecma-262/9.0/)
+
+
+### rest property
+**rest property**는 객체를 destructuring(구조분해) 할 때 나머지 프로퍼티를 묶어 하나의 새로운 객체로 복사(swallow copy)하는 역할을 합니다.
+
+rest property는 destructuring 시 맨 마지막 자리에만 쓸 수 있으며 다른 자리에서 사용하면 `syntax error`가 발생합니다.
+
+```js
+let obj = {
+  a: 1,
+  b: 2,
+  x: 3,
+  y: 4
+}
+
+let {a, b, ...c} = obj;
+a;      // 1
+b;      // 2
+c;      // {x: 3, y: 4}
+
+let {a, ...c, y} = obj;     // Uncaught SyntaxError: Rest element must be last element
+```
+
+
+### spread property
+**spread property**는 객체의 프로퍼티를 개별 변수로 펼쳐줍니다.
+
+object literal(object initializer) 방식으로 객체를 생성할 때 그 안에 spread prorperty를 사용하면 객체의 프로퍼티가 새로 만드는 객체의 프로퍼티로 복사(swallow copy)됩니다.
+
+```js
+let a = 1;
+let b = 2;
+let c = {x: 3, y: 4};
+
+let obj = {a, b, ...c};
+obj;    // {a: 1, b: 2, x: 3, y: 4}
+```
+
+또한 spread property를 이용하여 `Object.assign()`의 일부 기능을 대체할 수 있습니다.
+
+```js
+let obj1 = {a: 1, b: 2};
+let obj2 = {c: 3, d: 4};
+
+let assignedObj = Object.assign({}, obj1, obj2);        // {a: 1, b: 2, c: 3, d: 4}
+let spreadObj = {...obj1, ...obj2};                     // {a: 1, b: 2, c: 3, d: 4}
+
+JSON.stringify(assignedObj) === JSON.stringify(spreadObj);      // true
+```
+
+
+### 적용 대상
+Rest / Spread property는 객체의 모든 property를 다루지는 않고 **own enumerable property**만을 대상으로 합니다.
+
+own enumerable property란
+
+* 객체가 직접 소유하고
+* 열거가능(enumerable)한
+
+프로퍼티를 일컫습니다.
+
+객체가 직접 소유한 프로퍼티만 가능하기 때문에 rest / spread property는 프로토타입이 갖고 있는 프로퍼티를 처리하지 않습니다.
+
+또한 non-enumerable property도 처리하지 않습니다.
+
+**enumerable property**란 쉽게 말해서 `for...in` 구문이나 `Object.keys()`함수가 접근하는 프로퍼티들 입니다.
+
+예를 들어 `__proto__`나 배열의 `length`와 같은 프로퍼티들은 non-enumerable 이기 때문에 rest / spread property가 처리하지 않는 것입니다.
+
+통상적으론 객체의 프로퍼티를 선언할 때 자동으로 enumerable하게 설정되기에 크게 고민할 필요는 없어 보입니다.
+
+참고로, non-enumerable property를 선언하고 싶다면 [`Object.defineProperty()`]나 [`Object.defineProperties()`]를 사용하면 됩니다.
+
+
+
 ## References
 > [Extended Parameter Handling \| PoiemaWeb](https://poiemaweb.com/es6-extended-parameter-handling)
 >
@@ -244,6 +345,11 @@ arr4.splice(3, 0, ...arr5);                                 // ['a', 'b', 'c', '
 > [Spread syntax - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 >
 > [Array - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-
+>
+> [tc39/proposal-object-rest-spread: Rest/Spread Properties for ECMAScript](https://github.com/tc39/proposal-object-rest-spread)
+>
+> [ES2018: Rest/Spread Properties](https://2ality.com/2016/10/rest-spread-properties.html)
 
 [iterable]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols
+[`Object.defineProperty()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+[`Object.defineProperties()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties
