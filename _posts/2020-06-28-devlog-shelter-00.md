@@ -69,6 +69,21 @@ tags:
 * Sign up
 * Approve staff
 
+### 문제 및 보완
+1. **지도 api에 대한 경험이 없다.**
+  * 지도 api를 사용해본 적이 없어서 본격적인 개발 전 지도 api를 조작해보는데 시간을 할애해야 한다.
+1. **채팅 기능을 구현하는 방법을 모른다.**
+  * 상대방이 메세지를 입력했을 때 자신의 채팅창에서 바로 뜨게 만드는 방법이 명확하지 않다.
+
+
+
+## UI
+[https://ovenapp.io/view/jYVwS3Ouf7XsbGyrKpauuNnSWpKUlTKs/](https://ovenapp.io/view/jYVwS3Ouf7XsbGyrKpauuNnSWpKUlTKs/)
+
+### 문제 및 보완
+1. **회원가입과 로그인 버튼을 추가해야 한다.**
+  * 애매할 수 있겠지만 주요 기능이 아니니 크게 눈에 띄지도 않으면서 찾고 싶을 떈 금방 찾을 수 있도록 신경써야 할 것 같다.
+
 
 
 ## Database
