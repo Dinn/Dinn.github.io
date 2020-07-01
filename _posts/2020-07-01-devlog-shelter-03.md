@@ -1,8 +1,8 @@
 ---
 title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 3'
-excerpt: ''
+excerpt: '서버 및 클라이언트 기본 구조 설정'
 date: 2020-07-01
-last_modified_at:
+last_modified_at: 2020-07-02T01:28:10
 
 category:
   - Development Logs
