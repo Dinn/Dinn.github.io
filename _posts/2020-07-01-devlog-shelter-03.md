@@ -21,6 +21,8 @@ tags:
 
 **남은 기간** 9일
 
+**프로젝트 레포** [https://github.com/codestates/shelter](https://github.com/codestates/shelter)
+
 
 
 ## 2020.07.01 Day 3
