@@ -1,8 +1,8 @@
 ---
 title: 'Dev Log \| 청소년 쉼터 지도 개발일지 4'
-excerpt: ''
+excerpt: 'Filter 컴포넌트 구현'
 date: 2020-07-03
-last_modified_at:
+last_modified_at: 2020-07-13T19:20:25
 
 category:
   - Development Logs
@@ -15,13 +15,15 @@ tags:
 
 **주제** Shelter: 청소년 쉼터 지도
 
+**프로젝트 레포** [https://github.com/codestates/shelter](https://github.com/codestates/shelter)
+
 **프로젝트 기간** 2020.06.29 - 2020.07.10 (12일)
 
 **진행 기간** 5일
 
 **남은 기간** 7일
 
-**프로젝트 레포** [https://github.com/codestates/shelter](https://github.com/codestates/shelter)
+
 
 ## 2020.07.03 Day 5
 Filter 기능 하위에 있는 컴포넌트들을 만들었습니다.

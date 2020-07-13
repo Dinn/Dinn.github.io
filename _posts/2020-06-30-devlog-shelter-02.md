@@ -15,13 +15,13 @@ tags:
 
 **주제** Shelter: 청소년 쉼터 지도
 
+**프로젝트 레포** [https://github.com/codestates/shelter](https://github.com/codestates/shelter)
+
 **프로젝트 기간** 2020.06.29 - 2020.07.10 (12일)
 
 **진행 기간** 2일
 
 **남은 기간** 10일
-
-**프로젝트 레포** [https://github.com/codestates/shelter](https://github.com/codestates/shelter)
 
 
 
