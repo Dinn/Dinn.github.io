@@ -53,19 +53,19 @@ tags:
 
 ```js
 // FilterItem
-  ...
+  // ...
   render() {
-    ...
+    // ...
     return (
       <div>
-        ...
+        
         {this.props.shelter === this.props.currentShelter && (
           <FilterItemDetail shelter={this.props.shelter} />
         )}
       </div>
     );
   }
-  ...
+  // ...
 ```
 
 
