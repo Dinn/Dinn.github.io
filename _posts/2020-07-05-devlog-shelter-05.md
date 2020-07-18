@@ -1,5 +1,5 @@
 ---
-title: 'Dev Log \| 청소년 쉼터 지도 개발일지 5'
+title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 5'
 excerpt: 'Filter 컴포넌트 스타일 설정'
 date: 2020-07-05
 last_modified_at: 2020-07-14T13:35:56

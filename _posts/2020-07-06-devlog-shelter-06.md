@@ -1,5 +1,5 @@
 ---
-title: 'Dev Log \| 청소년 쉼터 지도 개발일지 6'
+title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 6'
 excerpt: 'FilterList와 ShelterMarker 상태 공유'
 date: 2020-07-06
 last_modified_at: 2020-07-14T18:29:44

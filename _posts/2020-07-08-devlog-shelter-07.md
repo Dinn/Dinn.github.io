@@ -1,5 +1,5 @@
 ---
-title: 'Dev Log \| 청소년 쉼터 지도 개발일지 7'
+title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 7'
 excerpt: '시작 위치 설정'
 date: 2020-07-08
 last_modified_at: 2020-07-14T22:10:55

@@ -1,5 +1,5 @@
 ---
-title: 'Dev Log \| 청소년 쉼터 지도 개발일지 2'
+title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 2'
 excerpt: '기능 정의 / 요구사항 분석 / UI 디자인 / server api 정의 / database scheam 정의'
 date: 2020-06-30
 last_modified_at: 2020-06-31T00:04:52

@@ -1,8 +1,8 @@
 ---
-title: 'Dev Log \| 청소년 쉼터 지도 개발일지 8'
-excerpt: 
+title: 'Dev Log \| 청소년 쉼터 지도 개발 일지 8'
+excerpt: '반응형 웹 디자인'
 date: 2020-07-09
-last_modified_at: 
+last_modified_at: 2020-07-15T23:42:47
 
 category:
   - Development Logs
@@ -34,7 +34,7 @@ tags:
 ## 반응형 웹 디자인
 모바일 환경에 맞춰 css 설정을 하였습니다.
 
-```js
+```css
 @media screen and (max-width: 480px) {
   .home {
     flex-direction: column;
