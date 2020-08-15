@@ -16,6 +16,21 @@
     width: calc(100% - #{$right-sidebar-width});
     padding-right: $right-sidebar-width;
   }
+
+  /* 2020.08.15 */
+  /* font-size increased no more than 16px */
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 16px;
+  }
+  
 }
 
 .archive__item {
