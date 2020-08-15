@@ -1,7 +1,5 @@
 ---
 title: "미세톡톡"
-layout: single
+layout: mise-toktok
 permalink: /miseTokTok/
 ---
-
-미세톡톡 개발일지

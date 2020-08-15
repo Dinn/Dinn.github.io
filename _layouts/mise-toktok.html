@@ -1,0 +1,21 @@
+---
+layout: archive
+---
+<!--
+  미세톡톡 글 모음
+-->
+
+{{ content }}
+
+{% for tag in site.tags %}
+  {% if tag[0] == "미세톡톡" %}
+  <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
+    <div class="entries-{{ page.entries_layout | default: 'list' }}">
+      {% for post in tag.last %}
+        {% include archive-single.html type=page.entries_layout %}
+      {% endfor %}
+    </div>
+    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+  </section>
+  {% endif %}
+{% endfor %}
