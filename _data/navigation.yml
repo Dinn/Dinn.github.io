@@ -17,7 +17,7 @@ main:
   #   description: 
   - title: "알고리즘 문제 해결 전략"
     url: /algorithm-problem-solving-strategies/
-  - title: "Porfolio"
+  - title: "Portfolio"
     url: /portfolio/
   - title: "Categories"
     url: /categories/
