@@ -34,7 +34,7 @@ React에서 컴포넌트는 함수와 클래스 두 가지 형태로 정의할 �
 
 
 ## Hooks in React Redux
-![react-redux](/assets/images/2020-08-13-devlog-miseTokTok-01/react-redux.png)
+![react-redux](/assets/images/devlog-miseTokTok/react-redux.png)
 
 React에서 Redux를 사용하기 위해선 외양을 담당하는 presentational component와 데이터의 읽고 쓰기를 담당하는 container component를 `connect( )` 함수로 묶어줘야 합니다.
 
