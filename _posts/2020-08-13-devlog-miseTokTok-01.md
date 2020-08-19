@@ -143,6 +143,13 @@ export default function DailyTokTok({ navigation }) {
 
 
 
+## 회고
+이번 요구사항을 하면서 컴포넌트 리팩토링에 확실한 자신감이 붙었습니다.
+특히나 redux의 `mapStateToProps`와 `mapDispatchToProps`를 사용하면서 정말 불편하다고 생각했는데 아주 좋은 대안을 찾은 것 같습니다.
+실제로 완성된 코드도 깔끔해진 것이 눈에 보여서 여러모로 만족스럽고 많이 배우는 기회였습니다.
+
+
+
 ## References
 > [Usage with React \| Redux](https://redux.js.org/basics/usage-with-react#presentational-and-container-components)
 >

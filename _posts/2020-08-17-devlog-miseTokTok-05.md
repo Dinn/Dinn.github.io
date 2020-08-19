@@ -57,3 +57,11 @@ Fallback UI는 문제 사항을 개발자에게 전달할 수 있도록 메일�
   <img src="/assets/images/devlog-miseTokTok/home.gif" width="32%" />
   <img src="/assets/images/devlog-miseTokTok/mail.gif" width="32%" />
 </div>
+
+
+
+## 회고
+React의 Error Boundary에 대해 확실하게 배우고 적용해 볼 수 있었습니다.
+Error Boundary를 공부하기 전엔 에러로 컴포넌트가 랜더링 되지 않는 상황에 대해서 생각해보지도 않았고 필요성 역시도 느끼지 못하고 있었습니다.
+역시나 새로운 지식을 습득했을 때 그만큼의 인지 범위가 확장되는 것 같습니다.
+그리고 덕분에 좋은 프론트엔드를 위한 또하나의 기준을 알게 됐다는 점은 참 고무적입니다.
