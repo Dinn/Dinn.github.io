@@ -1,7 +1,7 @@
 ---
 title: 'Dev Log \| 미세톡톡 개발 일지 5'
 excerpt: 'Toast 메세지 호출 방식 통일화'
-date: 2020-08-14
+date: 2020-08-16
 last_modified_at: 2020-08-19T14:22:32
 toc: false
 

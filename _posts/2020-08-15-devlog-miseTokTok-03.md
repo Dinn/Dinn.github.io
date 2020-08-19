@@ -1,7 +1,7 @@
 ---
 title: 'Dev Log \| 미세톡톡 개발 일지 4'
 excerpt: 'redux-saga 상태관리 로직 개선'
-date: 2020-08-14
+date: 2020-08-15
 last_modified_at: 2020-08-19T14:06:13
 toc: false
 
