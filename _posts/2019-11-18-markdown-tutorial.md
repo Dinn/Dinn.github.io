@@ -1,11 +1,11 @@
 ---
-title: "마크다운 사용법 / Markdown Tutorial"
+title: 'Dev Tip \| 마크다운 사용법 / Markdown Tutorial'
 excerpt: "Headers, Emphasis, Lists, Links, Images, Blockquotes, Code, Table, Horizontal Rules, Task Lists, Footnotes, Definition Lists, Backslash Escapes"
 date: 2019-11-18
 last_modified_at: 2019-11-21T22:32:39
 
 categories:
-  - Dev Tips
+  - Dev Tip
 tags:
   - Markdown
   - tutorial
