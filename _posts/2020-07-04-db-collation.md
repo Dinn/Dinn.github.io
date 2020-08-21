@@ -1,14 +1,13 @@
 ---
-title: 'Troubles \| MySQL의 character set과 collation 설정'
+title: 'Dev Tips \| MySQL의 character set과 collation 설정'
 excerpt: 
 date: 2020-07-04
 last_modified_at: 2020-07-04T22:32:08
 
 category:
-  - Troubleshooting
+  - Dev Tips
 
 tags:
-  - Troubleshooting
   - Database
   - collation
 ---
