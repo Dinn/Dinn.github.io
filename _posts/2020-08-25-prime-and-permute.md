@@ -2,7 +2,7 @@
 title: 'Algorithm \| 완전 탐색: 소수 찾기'
 excerpt: '프로그래머스의 \<소수 찾기\> 라는 문제를 통해 소수 여부를 판단하는 코드와 permutation을 구하는 코드를 알아보겠습니다.'
 date: 2020-08-25
-last_modified_at: 2020-08-25T23:50:07
+last_modified_at: 2020-08-26T18:20:59
 
 category:
   - Algorithm
@@ -87,7 +87,7 @@ function combination(n, m) {
   let ret = [];
   for(let i = 0; i < n.length; ++i) {
     // [...n.slice(0, i), ...n.slice(i + 1)] -> n.slice(i + 1)
-    ret = [...ret, ...permutation(n.slice(i + 1), m - 1).map(e => [n[i], ...e])];
+    ret = [...ret, ...combination(n.slice(i + 1), m - 1).map(e => [n[i], ...e])];
   }
   return ret;
 }
