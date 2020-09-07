@@ -17,13 +17,20 @@
   animation-delay: 0.45s;
   background-color: $footer-background-color;
 
+  // 2020.09.07 added
+  @include breakpoint($x-large) {
+    margin-top: 0em;
+  }
+
+  @include breakpoint($large) {
+    margin-top: 0em;
+  }
+
   footer {
     @include clearfix;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
+    margin: auto;
     max-width: 100%;
-    padding: 0 1em 2em;
+    padding: 1em;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
