@@ -22,4 +22,6 @@ permalink: /portfolio/
 
 [Github](https://github.com/Dinn/shelter-public)
 
+[배포](http://project-shelter.s3-website.ap-northeast-2.amazonaws.com/)
+
 [개발 일지 모음](/shelter/)
