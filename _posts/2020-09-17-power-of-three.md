@@ -14,7 +14,6 @@ tags:
   - ES6
   - leetCode
   - Top Interview Questions Easy Collenction
-  - Power of Three
 ---
 
 > 본 글은 leetCode의 [Power of Three](https://leetcode.com/problems/power-of-three/) 문제 솔루션을 JavaScript 코드로 정리한 글입니다.

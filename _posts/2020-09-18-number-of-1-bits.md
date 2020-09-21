@@ -14,7 +14,6 @@ tags:
   - ES6
   - leetCode
   - Top Interview Questions Easy Collenction
-  - Number of 1 Bits
 ---
 
 > 본 글은 leetCode의 [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) 문제 솔루션을 JavaScript 코드로 정리한 글입니다.

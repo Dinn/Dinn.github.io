@@ -14,7 +14,6 @@ tags:
   - ES6
   - leetCode
   - Top Interview Questions Easy Collenction
-  - Rotate Array
 ---
 
 > 본 글은 leetCode의 [Rotate Array](https://leetcode.com/problems/rotate-array/) 문제 솔루션을 JavaScript 코드로 정리한 글입니다.
