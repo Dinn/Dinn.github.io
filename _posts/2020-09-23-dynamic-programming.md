@@ -16,7 +16,7 @@ tags:
   - Top Interview Questions Medium Collenction
 ---
 
-> 본 글은 [leetCode](https://leetcode.com/explore/interview/card/top-interview-questions-medium/111/dynamic-programming/)의 Jump Game, Unique Paths, Coin Change 문제 솔루션을 JavaScript 코드로 정리한 글입니다.
+> 본 글은 [leetCode](https://leetcode.com/explore/interview/card/top-interview-questions-medium/111/dynamic-programming/)의 Jump Game / Unique Paths / Coin Change 문제 솔루션을 JavaScript 코드로 정리한 글입니다.
 
 ## Jump Game
 [문제 자세히 보기](https://leetcode.com/problems/jump-game/)
