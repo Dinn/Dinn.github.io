@@ -2,7 +2,7 @@
 title: 'Algorithm \| 완전 탐색: 소수 찾기'
 excerpt: '프로그래머스의 \<소수 찾기\> 라는 문제를 통해 소수 여부를 판단하는 코드와 permutation을 구하는 코드를 알아보겠습니다.'
 date: 2020-08-25
-last_modified_at: 2020-08-26T18:20:59
+last_modified_at: 2020-09-25T16:22:22
 
 category:
   - Algorithm
@@ -53,7 +53,7 @@ function isPrime(num) {
 
 ```js
 function permutation(n, m) {
-  if(m <= 0) return undefined;
+  if(m <= 0) return [[]];
   if(m === 1) return n.map(e => [e]);
 
   let ret = [];
@@ -76,12 +76,14 @@ function permutation(s, n) {
     return ret;
 }
 ```
-<br>
+## Combination
+문제와는 직접적인 연관은 없지만 그래도 그냥 지나치면 섭하니 combination을 구하는 코드에 대해서도 알아보겠습니다.
+
 만약 combination을 하고 싶다면 재귀 호출할 때 전달하는 파라메터를 조금 수정해주면 됩니다.
 
 ```js
 function combination(n, m) {
-  if(m <= 0) return undefined;
+  if(m <= 0) return [[]];
   if(m === 1) return n.map(e => [e]);
 
   let ret = [];
@@ -91,4 +93,30 @@ function combination(n, m) {
   }
   return ret;
 }
+```
+
+### 모든 부분 집합 구하기
+추가로, `combination(n, 0)`, `combination(n, 1)`, ... `combination(n, n)`을 구하는 방법입니다.
+
+쉽게 말해 배열의 모든 부분 집합을 구하는 방법입니다.
+우선 위에서 정의한 `combination()` 함수를 이용하여 구해보겠습니다.
+
+```js
+let arr = [1, 2, 3, 4, 5];
+let subset = [];
+for(let i = 0; i <= arr.length; ++i) {
+  subset.push(...combination(arr, i));
+}
+```
+
+이 외에도 재귀 함수가 아닌 반복문을 사용하여 더 간단하게 구하는 방법도 있습니다.
+
+```js
+let arr = [1, 2, 3, 4, 5];
+let subset = [[]];
+arr.forEach(n => {
+  subset.forEach(s => {
+    subset.push([...s, n]);
+  });
+});
 ```
