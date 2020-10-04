@@ -32,7 +32,7 @@ $ git clone --mirror
 `git clone`을 하면 레포지토리 이름의 디렉토리가 생성되고 그 안에 `.git` 파일이 들어가지만 `git clone --mirror`을 하면 `.git` 자체가 `$GIT_DIR`이 되어 `[repo name].git`의 형태로 다운됩니다.
 
 추가로, 위키는 `git clone --mirror` 하더라도 복사되지 않습니다.
-**위키까지 옮기고 싶다면** `git clone [Repository Name].wiki.git.wiki.git`을 입력하는 것으로 가능하며 url은 위키 탭에서도 복사할 수 있습니다.
+**위키까지 옮기고 싶다면** `git clone [Repository Name].wiki.git`을 입력하는 것으로 가능하며 url은 위키 탭에서도 복사할 수 있습니다.
 
 
 ## git remote update
