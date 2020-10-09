@@ -1,7 +1,7 @@
 ---
 title: 'Algorithm \| Generate Parentheses'
 date: 2020-09-25
-last_modified_at: 2020-09-25T18:25:21
+last_modified_at: 2020-10-09T14:40:49
 
 category:
   - Algorithm
@@ -59,7 +59,7 @@ parens(n) = [
 
 ```js
 var generateParenthesis = function(n) {
-  if(n === 0) return "";
+  if(n == 0) return [""];
   let ret = [];
   for(let i = 0; i < n; ++i) {
     for(let left of generateParenthesis(i)) {
@@ -71,3 +71,5 @@ var generateParenthesis = function(n) {
   return ret;
 };
 ```
+
+이 상태에서 캐시를 추가하여 dynamic programming을 적용해 볼 수도 있겠습니다.
