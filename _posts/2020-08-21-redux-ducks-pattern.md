@@ -36,7 +36,7 @@ export const setFilterConditions = conditions => ({
 ```
 
 ```js
-// src/reducers/filter.js
+// src/reducers/filter.reducer.js
 import { SET_FILTER_CONDITIONS } from "../actions/index";
 
 export const filter = (state = initialState, action) => {
@@ -60,7 +60,7 @@ import reducers fron "./reducers";
 const store = createStore(reducers);
 ```
 
-redux의 데이터 흐름을 간단히 설명하자면, `src/actions/index.js`에서 액션 객체를 정의하고, `src/reducers/filter.js`의 `filter` 리듀서가 액션에 담긴대로 새로운 state를 만들고, `store`는 새로운 state를 저장하는 식으로 이뤄집니다.
+redux의 데이터 흐름을 간단히 설명하자면, `src/actions/index.js`에서 액션 객체를 정의하고, `src/reducers/filter.reducer.js`의 `filter` 리듀서가 액션에 담긴대로 새로운 state를 만들고, `store`는 새로운 state를 저장하는 식으로 이뤄집니다.
 <sub>(리듀서는 `src/reducers/index.js`에서 `combineReducers( )` 함수를 거쳐 하나의 `rootReducer`로 사용 중입니다.)</sub>
 
 기존의 redux는 이렇게 액션과 리듀서를 나누어서 사용하고 있었습니다.
@@ -109,7 +109,7 @@ redux-actions는 redux의 boilerplate 코드들을 함수로 제공해줍니다.
 그래서 기존의 코드를 아래처럼 `handleActions`라는 함수에 reducer 함수 객체를 넘겨주는 식으로 대체할 수 있습니다.
 
 ```js
-// src/reducers/filter.js
+// src/reducers/filter.reducer.js
 // 변경 전
 export const filter = (state = initialState, action) => {
   switch (action.type) {
@@ -134,7 +134,7 @@ export default handleActions({
 ### 2. export its action creators as functions
 각 action creator 함수는 export 해야한다는 조건입니다.
 
-이제 action creator는 더이상 다른 파일에 두지 않고 `src/reducers/filter.js`에 함께 써줍니다.
+이제 action creator는 더이상 다른 파일에 두지 않고 `src/reducers/filter.reducer.js`에 함께 써줍니다.
 
 이번에도 redux-actions를 사용해서 함수형태로 export 하지는 않았지만 그래도 action creator는 모두 export 해줬습니다.
 redux-actions의 `createAction` 이라는 함수를 사용하면 기존의 코드를 아래와 같이 간단한 코드로 수정할 수 있습니다.
@@ -156,7 +156,7 @@ export const setFilterConditions = createAction(SET_FILTER_CONDITIONS);
 어차피 사용하는 쪽에서 `filterActions`라는 이름으로 rename해서 사용하기 때문에 애초에 리듀서 파일에서 하나의 객체로 보내는 편을 선택한 것입니다.
 
 ```js
-// src/reducers/filter.js
+// src/reducers/filter.reducer.js
 export const filterActions = {
   setFilterConditions: createAction(SET_FILTER_CONDITIONS)
 }
@@ -190,9 +190,9 @@ const SET_FILTER_CONDITIONS = "shelter/filter/SET_FILTER_CONDITIONS";
 
 
 ## Source Code
-[source code](https://github.com/Dinn/shelter-public/blob/master/client/src/reducers/filter.js)
+[source code](https://github.com/Dinn/shelter-public/blob/master/client/src/reducers/filter.reducer.js)
 ```js
-// src/reducers/filter.js
+// src/reducers/filter.reducer.js
 // Action Types
 const SET_FILTER_CONDITIONS = "shelter/filter/SET_FILTER_CONDITIONS";
 
