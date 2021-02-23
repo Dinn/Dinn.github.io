@@ -312,9 +312,9 @@ $ git config --local user.name "John Doe"
 $ git config --local user.email johndoe@example.com
 ``` 
 
-> (맥OS 에 Jekyll 설치 \| Jekyll • 심플한, 블로그 지향적, 정적 사이트)[https://jekyllrb-ko.github.io/docs/installation/macos/]
+> [맥OS 에 Jekyll 설치 \| Jekyll • 심플한, 블로그 지향적, 정적 사이트](https://jekyllrb-ko.github.io/docs/installation/macos/)
 >
-> (jekyll을 설치하고 로컬에 블로그를 뛰우려고 합니다. : frhyme.code)[https://frhyme.github.io/blog/install_jekyll_again/]
+> [jekyll을 설치하고 로컬에 블로그를 뛰우려고 합니다. : frhyme.code](https://frhyme.github.io/blog/install_jekyll_again/)
 
 
 
