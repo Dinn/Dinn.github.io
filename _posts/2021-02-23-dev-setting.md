@@ -108,6 +108,14 @@ alias eixt='exit'
 $ brew cask install google-chrome
 ```
 
+가끔 터미널에서 바로 크롬을 실행하는 것이 더 간편한 경우가 있습니다.
+그런데, 맥에서 크롬을 실행하는 명령어는 조금 긴 편이라 이것도 간단하게 alias를 설정해주겠습니다.
+
+```sh
+$ echo '## set Google Chrome alias' >> ~/.zshrc
+$ echo 'alias chrome='open -a "Google Chrome"'' >> ~/.zshrc
+```
+
 
 
 ## Visual Studio Code
