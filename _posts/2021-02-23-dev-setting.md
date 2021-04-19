@@ -265,6 +265,15 @@ $ brew install yarn --without-node
 
 
 
+## Karabiner-Elements
+맥북의 키 매핑 프로그램입니다.
+
+[Karabiner-Elements](https://karabiner-elements.pqrs.org/)에서 현재 사용 중인 OS에 맞는 버전을 다운로드 합니다.
+
+설정과 적용 방법은 [깃헙](https://github.com/Dinn/Karabiner-Elements-settings)에 올려놨습니다.
+
+
+
 ## 블로그
 이번에 블로그 세팅하는데 많이 애를 먹었습니다...
 
@@ -345,9 +354,9 @@ $ git config --local user.email johndoe@example.com
 - [ ] NVM
 - [ ] Node.js
 - [ ] yarn
+- [ ] Karabiner-Elements
 - [ ] 블로그
 
 - [ ] 카카오톡
-- [ ] slack
 - [ ] zoom
 - [ ] Microsoft To Do
