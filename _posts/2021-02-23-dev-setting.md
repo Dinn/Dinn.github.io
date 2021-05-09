@@ -85,11 +85,22 @@ vim 작업을 한 김에 터미널 설정도 해줍니다.
 
 터미널은 Catalina 기준 기본 터미널인 zsh를 사용하겠습니다.
 
-우선 설정 파일을 생성합니다.
+우선 zsh의 각종 확장 기능을 활용하기 위해 [oh-my-zsh를 설치](https://github.com/ohmyzsh/ohmyzsh#basic-installation)하겠습니다.
+
+다음 확장 기능을 설치 / 적용합니다.
+
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+
+참고로 위 두 패키지는 모두 `brew`를 통해 간단하게 설치할 수 있습니다.
+`brew`를 통해 설치했다면, `.zshrc`에 아래와 같은 스크립트를 추가하여 적용해줍니다.
 
 ```sh
-$ vim ~/.zshrc
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-autosuggestions/zsh-autosuggestions.zsh
 ```
+
+[iTerm](https://iterm2.com/) 또한 설치해줍니다.
 
 저는 자주 쓰는 오타는 아예 alias로 지정하여 사용하는 편입니다.
 대표적으로 `exit`를 `eixt`로 자주 적는데, 오타를 치더라도 원래 의도한 `exit` 명령어를 수행하도록 했습니다.
