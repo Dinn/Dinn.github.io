@@ -87,6 +87,32 @@ vim 작업을 한 김에 터미널 설정도 해줍니다.
 
 우선 zsh의 각종 확장 기능을 활용하기 위해 [oh-my-zsh를 설치](https://github.com/ohmyzsh/ohmyzsh#basic-installation)하겠습니다.
 
+oh-my-zsh를 설치하고나서 터미널을 실행해보면 아래와 같은 경고 메세지가 뜨기도 합니다.
+
+```
+[oh-my-zsh] Insecure completion-dependent directories detected:
+drwxrwxr-x  3 user  admin  96  5 10 13:27 /usr/local/share/zsh
+drwxrwxr-x  3 user  admin  96  5 10 13:31 /usr/local/share/zsh/site-functions
+
+[oh-my-zsh] For safety, we will not load completions from these directories until
+[oh-my-zsh] you fix their permissions and ownership and restart zsh.
+[oh-my-zsh] See the above list for directories with group or other writability.
+
+[oh-my-zsh] To fix your permissions you can do so by disabling
+[oh-my-zsh] the write permission of "group" and "others" and making sure that the
+[oh-my-zsh] owner of these directories is either root or your current user.
+[oh-my-zsh] The following command may help:
+[oh-my-zsh]     compaudit | xargs chmod g-w,o-w
+
+[oh-my-zsh] If the above didn't help or you want to skip the verification of
+[oh-my-zsh] insecure directories you can set the variable ZSH_DISABLE_COMPFIX to
+[oh-my-zsh] "true" before oh-my-zsh is sourced in your zshrc file.
+```
+
+정확히는 모르겠지만 아마 권한에 문제가 있는 것 같습니다.
+
+쉘에 메세지에서 안내하는대로 `compaudit | xargs chmod g-w,o-w` 명령어를 입력하면 해결됩니다.
+
 다음 확장 기능을 설치 / 적용합니다.
 
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
@@ -97,12 +123,31 @@ vim 작업을 한 김에 터미널 설정도 해줍니다.
 
 ```sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-syntax-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 
 [iTerm](https://iterm2.com/) 또한 설치해줍니다.
 
-저는 자주 쓰는 오타는 아예 alias로 지정하여 사용하는 편입니다.
+그런데 기본 폰트에서 oh-my-zsh의 대다수 테마는 깨지는 현상을 보입니다.
+
+이를 해결하기 위해선 [Powerline Font](https://github.com/powerline/fonts)를 설치해줘야 합니다.
+
+```sh
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+
+저는 특별히 naver에서 제공하는 [D2 Coding](https://github.com/naver/d2codingfont) 폰트를 따로 설치해서 사용하려고 합니다.
+
+D2 coding 깃헙 레포에 들어가 최신 버전의 zip 파일을 다운로드 한 뒤에 `D2COdingAll` 폴더의 `ttc` 파일을 실행하면 됩니다.
+
+추가로, 저는 자주 쓰는 오타는 아예 alias로 지정하여 사용하는 편입니다.
 대표적으로 `exit`를 `eixt`로 자주 적는데, 오타를 치더라도 원래 의도한 `exit` 명령어를 수행하도록 했습니다.
 
 ```
@@ -116,7 +161,7 @@ alias eixt='exit'
 위에서 설치한 `homebrew cask`를 이용하여 cli 상에서 설치할 수도 있습니다.
 
 ```sh
-$ brew cask install google-chrome
+$ brew install --cask google-chrome
 ```
 
 가끔 터미널에서 바로 크롬을 실행하는 것이 더 간편한 경우가 있습니다.
@@ -134,6 +179,10 @@ $ echo 'alias chrome='open -a "Google Chrome"'' >> ~/.zshrc
 
 다운이 완료되면 지정한 경로에 `.zip` 파일과 압축이 해제된 vscode 어플리케이션 파일 `Visual Studio Code.app`이 생성될 것입니다. 
 Mac의 `Finder`에서 다운 받은 `Visual Studio Code.app`을 `응용 프로그램`에 드래그 앤 드랍해서 넣어줍니다.
+
+vscode는 계정을 통해 설정을 동기화하는 기능을 제공합니다.
+
+저는 github 계정으로 로그인하여 사용하고 있습니다.
 
 그러면 `Launchpad`에서 vscode를 확인할 수 있는데, 추가로 vscode를 터미널에서 `code` 명령어로 실행할 수 있도록 설정하겠습니다.
 
@@ -371,3 +420,4 @@ $ git config --local user.email johndoe@example.com
 - [ ] 카카오톡
 - [ ] zoom
 - [ ] Microsoft To Do
+- [ ] spectacle
