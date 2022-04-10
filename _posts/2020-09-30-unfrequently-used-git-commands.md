@@ -1,8 +1,8 @@
 ---
 title: 'Dev Tip \| 가끔 사용하는 깃 명령어 모음'
-excerpt:
+excerpt: 'git clone --mirror, reset, revert'
 date: 2020-10-04
-last_modified_at: 2021-03-01T18:17:49
+last_modified_at: 2022-04-11T00:40:30
 
 category:
   - Dev Tip
@@ -168,6 +168,7 @@ $ git status
 
 단, 그냥 `git push`를 한다면 현재 커밋이 리모트 레포의 커밋보다 뒤에 있기 때문에 `push`가 실패합니다.
 이를 해결하기 위해 `-f` 또는 `--force` 옵션으로 `push` 해줍니다.
+물론, 강제로 push를 하는 것은 변경 이력 자체도 삭제하는 것이기 때문에 프로덕션 코드에선 revert를 하는 편이 안전하다고 볼 수 있겠습니다.
 
 ```sh
 $ git push -f origin master

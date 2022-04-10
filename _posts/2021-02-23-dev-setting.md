@@ -1,7 +1,7 @@
 ---
 title: 'Dev Tips \| 개인적인 개발 세팅 메뉴얼'
 date: 2021-02-23
-last_modified_at: 2021-02-24T01:47:21
+last_modified_at: 2022-04-11T00:40:40
 
 category:
   - Dev Tip
@@ -170,6 +170,9 @@ $ brew install --cask google-chrome
 ```sh
 $ echo '## set Google Chrome alias' >> ~/.zshrc
 $ echo 'alias chrome='open -a "Google Chrome"'' >> ~/.zshrc
+
+## chrome for debugging
+$ echo "alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=/Users/user/Library/Application\ Support/Google/Chrome\ Debug'" >> ~/.zshrc
 ```
 
 
